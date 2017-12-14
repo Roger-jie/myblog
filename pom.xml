@@ -39,6 +39,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
           </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-devtools</artifactId>
+          <optional>true</optional>
+          <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
+      </dependency>
       <!--Mybatis-->
       <dependency>
           <groupId>mysql</groupId>
@@ -57,6 +67,22 @@
                 <scope>test</scope>
           </dependency>
   </dependencies>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <fork>true</fork>
+        </configuration>
+        <dependencies>
+            <!-- spring热部署-->
+            <!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>springloaded</artifactId>
+                <version>1.2.6.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </plugin>
   <build>
     <finalName>blog</finalName>
   </build>

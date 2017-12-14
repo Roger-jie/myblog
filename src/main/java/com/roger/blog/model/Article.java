@@ -14,6 +14,10 @@ public class Article {
     private String title;
     //描述
     private String describes;
+    //关键字
+    private String keyword;
+    //点击量
+    private int click;
     //内容
     private String content;
     //创建时间
@@ -25,10 +29,12 @@ public class Article {
 
     public Article() {}
 
-    public Article(int id, String title, String describes, String content, Date create_date, String comment_count, String category) {
+    public Article(int id, String title, String describes, String keyword, int click, String content, Date create_date, String comment_count, String category) {
         this.id = id;
         this.title = title;
         this.describes = describes;
+        this.keyword = keyword;
+        this.click = click;
         this.content = content;
         this.create_date = create_date;
         this.comment_count = comment_count;
@@ -89,5 +95,21 @@ public class Article {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public int getClick() {
+        return click;
+    }
+
+    public void setClick(int click) {
+        this.click = click;
     }
 }
