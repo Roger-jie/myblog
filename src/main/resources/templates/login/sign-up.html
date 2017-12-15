@@ -1,0 +1,160 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+                     layout:decorator="login/main">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Minimal and Clean Sign up / Login and Forgot Form by FreeHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+
+
+
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+
+</head>
+<body class="style-3">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-push-8">
+
+
+            <!-- Start Sign In Form -->
+            <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight" id="signUpForm" name="signUpForm">
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <div class="alert alert-success" role="alert">Your info has been saved.</div>
+                </div>
+                <div class="form-group">
+                    <label for="login_name" class="sr-only">LoginName</label>
+                    <input type="text" class="form-control" id="login_name" placeholder="登录名" autocomplete="off" name="login_name"/>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="sr-only">Email</label>
+                    <input type="text" class="form-control" id="name" placeholder="name" autocomplete="off" name="name"/>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" autocomplete="off" name="email"/>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off" name="password"/>
+                </div>
+                <div class="form-group">
+                    <label for="rePassword" class="sr-only">Re-type Password</label>
+                    <input type="password" class="form-control" id="rePassword" placeholder="Re-type Password" autocomplete="off"  name="rePassword"/>
+                </div>
+                <div class="form-group">
+                    <label for="remember"><input type="checkbox" id="remember"/> Remember Me</label>
+                </div>
+                <div class="form-group">
+                    <p>Already registered? <a href="loginHtml">Sign In</a></p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="注册" class="btn btn-primary"/>
+                </div>
+            </form>
+            <!-- END Sign In Form -->
+
+
+        </div>
+    </div>
+    <div class="row" style="padding-top: 60px; clear: both;">
+        <div class="col-md-12 text-center"><p><small>Roger </small></p></div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+$(function () {
+    $('#signUpForm').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            login_name: {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and can\'t be empty'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and can\'t be empty'
+                    },
+                    identical: {
+                        field: 'rePassword',
+                        message: 'The password and its confirm are not the same'
+                    }
+                }
+            },
+            rePassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'The confirm password is required and can\'t be empty'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: 'The password and its confirm are not the same'
+                    }
+                }
+            },
+
+        }
+    });
+});
+$('#signUpForm').submit(function() {
+    //$('#signUpForm').data('bootstrapValidator').validate();
+    //if(bootstrapValidator.isValid()){
+        //表单提交的方法、比如ajax提交
+    var _data = $("#signUpForm").serializeArray();
+    console.info(_data);
+//    $.ajax({
+//        type: 'post',
+//        url: 'http://localhost:8080/user/addUser',
+//        data: {},
+//        beforeSend: function (XMLHttpRequest) {
+//
+//        },
+//        success: function (data, status) {
+//            alert("msg: " + data.msg);
+//        },
+//        complete: function (XMLHttpRequest, textStatus) {
+//
+//        },
+//        error: function () {
+//
+//        }
+//    });
+
+    //} else {
+        //alert('没填写好');
+   // }
+
+});
+
+
+
+</script>

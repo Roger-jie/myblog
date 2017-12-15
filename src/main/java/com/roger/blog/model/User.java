@@ -13,24 +13,29 @@ public class User {
     private String name;
     private String password;
     //头像
-    private String headUrl;
+    private String head_url;
     private String email;
     //简介
     private String brief;
+    //状态
+    private  int status;
 
+    private String role;
 
     public User(){
 
     }
 
-    public User(int id, String login_name, String name, String password, String headUrl, String email, String brief) {
+    public User(int id, String login_name, String name, String password, String head_url, String email, String brief , int status,String role) {
         this.id = id;
         this.login_name = login_name;
         this.name = name;
         this.password = password;
-        this.headUrl = headUrl;
+        this.head_url = head_url;
         this.email = email;
         this.brief = brief;
+        this.status = status;
+        this.role = role;
     }
 
     public int getId() {
@@ -82,12 +87,27 @@ public class User {
     }
 
 
-    public String getHeadUrl() {
-        return headUrl;
+    public String getHead_url() {
+        return head_url;
     }
 
-    public void setHeadUrl(String headUrl) {
-        this.headUrl = headUrl;
+    public void setHead_url(String head_url) {
+        this.head_url = head_url;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

@@ -1,15 +1,21 @@
 package com.roger.blog.dao;
 
 import com.roger.blog.model.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * Created by Administrator on 2017/12/14 0014.
  */
 @Mapper
 public interface UserMapper {
-    @Select("select * from User where login_name = #{loginName} and password = #{password}")
-    User findUser(@Param("loginName") String loginName,@Param("password") String password);
+    @Select("select * from User where login_name = #{login_name} and password = #{password}")
+    User findUser(User user);
+
+    //新增用户，用户状态为0，不可登录
+    @Insert("insert into user (login_name , name, password ,head_url ,role ,email ,brief ,status) values(#{login_name},#{name}," +
+            "#{password},#{head_url},#{role},#{email},#{brief},0)")
+    @SelectKey(statement="call identity()", keyProperty="id", before=false, resultType=int.class)
+    void addUser(User user);
+
+
 }
