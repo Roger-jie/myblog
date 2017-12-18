@@ -52,5 +52,9 @@ public class UserController {
         }
         return json;
     }
-
+    @RequestMapping("getUserByLoginName")
+    @ResponseBody
+    public AjaxJson getUserByLoginName(String login_name){
+        return null;
+    }
 }

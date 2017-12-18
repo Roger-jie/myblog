@@ -33,7 +33,7 @@
 
 
             <!-- Start Sign In Form -->
-            <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight" id="signUpForm" name="signUpForm">
+            <form action="#" class="fh5co-form animate-box " data-animate-effect="fadeInRight" id="signUpForm" >
                 <h2>Sign Up</h2>
                 <div class="form-group">
                     <div class="alert alert-success" role="alert">Your info has been saved.</div>
@@ -65,7 +65,7 @@
                     <p>Already registered? <a href="loginHtml">Sign In</a></p>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="注册" class="btn btn-primary"/>
+                    <input type="button" value="注册" class="btn btn-primary" onclick="saveUser()"/>
                 </div>
             </form>
             <!-- END Sign In Form -->
@@ -96,6 +96,39 @@ $(function () {
                 validators: {
                     notEmpty: {
                         message: 'The username is required and can\'t be empty'
+                    },
+                    stringLength: {
+                        min: 4,
+                        max: 10,
+                        message: '用户名长度必须在4到10之间'
+                    },
+                    threshold: 4, //有6字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+                    remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                        url: '',//验证地址
+                        message: '用户已存在',//提示消息
+                        delay: 2000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+                        type: 'POST'//请求方式
+                        /**自定义提交数据，默认值提交当前input value
+                         *  data: function(validator) {
+                               return {
+                                   password: $('[name="passwordNameAttributeInYourForm"]').val(),
+                                   whatever: $('[name="whateverNameAttributeInYourForm"]').val()
+                               };
+                            }
+                         */
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                        message: '用户名由数字字母下划线和.组成'
+                    }
+                }
+            },
+
+            name :{
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and can\'t be empty'
                     }
                 }
             },
@@ -104,57 +137,72 @@ $(function () {
                     notEmpty: {
                         message: 'The password is required and can\'t be empty'
                     },
-                    identical: {
+                    identical:{
                         field: 'rePassword',
-                        message: 'The password and its confirm are not the same'
+                        message: '两次密码不一致'
                     }
                 }
             },
-            rePassword: {
+            rePassword:{
                 validators: {
                     notEmpty: {
-                        message: 'The confirm password is required and can\'t be empty'
+                        message: 'The password is required and can\'t be empty'
                     },
-                    identical: {
+                    identical:{
                         field: 'password',
-                        message: 'The password and its confirm are not the same'
+                        message: '两次密码不一致'
                     }
                 }
             },
-
         }
     });
 });
-$('#signUpForm').submit(function() {
-    //$('#signUpForm').data('bootstrapValidator').validate();
-    //if(bootstrapValidator.isValid()){
+function  saveUser() {
+    var _validator = $('#signUpForm').data('bootstrapValidator');
+    if (!_validator.isValid()) {
+        alert('请填写完整!');
+        return  false;
+    }
         //表单提交的方法、比如ajax提交
-    var _data = $("#signUpForm").serializeArray();
-    console.info(_data);
-//    $.ajax({
-//        type: 'post',
-//        url: 'http://localhost:8080/user/addUser',
-//        data: {},
-//        beforeSend: function (XMLHttpRequest) {
-//
-//        },
-//        success: function (data, status) {
-//            alert("msg: " + data.msg);
-//        },
-//        complete: function (XMLHttpRequest, textStatus) {
-//
-//        },
-//        error: function () {
-//
-//        }
-//    });
+        var _data = getFormJson('#signUpForm');
+        delete  _data.rePassword;
+        console.info(_data);
+        $.ajax({
+            type: 'post',
+            url: '/user/addUser',
+            data: _data,
+            dataType: "json",
+            beforeSend: function (XMLHttpRequest) {
 
-    //} else {
-        //alert('没填写好');
-   // }
+            },
+            success: function (data, status) {
+                alert("msg: " + data.msg);
+            },
+            complete: function (XMLHttpRequest, textStatus) {
 
-});
+            },
+            error: function () {
 
+            }
+        });
+        return false;
+    }
+//获取formJSON对象
+function getFormJson(form) {
+    var user = {};
+    var a = $(form).serializeArray();
+    $.each(a, function () {
+        if (user[this.name] !== undefined) {
+            if (!user[this.name].push) {
+                user[this.name] = [user[this.name]];
+            }
+            user[this.name].push(this.value || '');
+        } else {
+            user[this.name] = this.value || '';
+        }
+    });
+    return user;
+}
 
 
 </script>

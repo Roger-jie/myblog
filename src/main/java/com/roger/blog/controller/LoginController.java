@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author  Roger
  */
 @Controller
-@RequestMapping("/loginController")
+@RequestMapping("/login")
 public class LoginController {
 
         @RequestMapping("/loginHtml")

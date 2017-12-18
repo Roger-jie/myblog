@@ -14,7 +14,7 @@ public interface UserMapper {
     //新增用户，用户状态为0，不可登录
     @Insert("insert into user (login_name , name, password ,head_url ,role ,email ,brief ,status) values(#{login_name},#{name}," +
             "#{password},#{head_url},#{role},#{email},#{brief},0)")
-    @SelectKey(statement="call identity()", keyProperty="id", before=false, resultType=int.class)
+    @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
     void addUser(User user);
 
 
