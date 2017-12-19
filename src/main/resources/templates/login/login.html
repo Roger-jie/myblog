@@ -1,6 +1,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="login/main">
+      layout:decorator="/main">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -42,15 +42,15 @@
     <div class="row">
         <div class="col-md-4 col-md-push-8">
             <!-- Start Sign In Form -->
-            <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+            <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight" id="loginForm">
                 <h2>Sign In</h2>
                 <div class="form-group">
-                    <label for="username" class="sr-only">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username" autocomplete="off"/>
+                    <label for="login_name" class="sr-only">Username</label>
+                    <input type="text" class="form-control" id="login_name" placeholder="登录名" autocomplete="off" name="login_name"/>
                 </div>
                 <div class="form-group">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off"/>
+                    <input type="password" class="form-control" id="password" placeholder="密码" autocomplete="off" name="password"/>
                 </div>
                 <div class="form-group">
                     <label for="remember"><input type="checkbox" id="remember"/> Remember Me</label>
@@ -59,7 +59,7 @@
                     <p>没有账号? <a href="signUp">注册</a> | <a href="#">Forgot Password?</a></p>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="登 录" class="btn btn-primary"/>
+                    <input type="button" value="登 录" class="btn btn-primary" onclick="return login()"/>
                 </div>
             </form>
             <!-- END Sign In Form -->
@@ -74,4 +74,72 @@
 
 </body>
 </html>
+<script>
+$(function(){
+    $('#loginForm').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields : {
+            login_name: {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and can\'t be empty'
+                    },
+                    stringLength: {
+                        min: 4,
+                        max: 10,
+                        message: '用户名长度必须在4到10之间'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                        message: '用户名由数字字母下划线和.组成'
+                    }
+                },
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and can\'t be empty'
+                    },
+                }
+            }
+        }
+    });
+});
+function login() {
+    var _validator = $('#loginForm').data('bootstrapValidator');
+    if (!_validator.isValid()) {
+        _validator.validate();
+        layer.msg('请将信息填写完整!');
+        return  false;
+    }
+    $.ajax({
+        type: 'post',
+        url: '/login/userLogin',
+        data: {'login_name' : $('#login_name').val(), 'password' : $('#password').val()},
+        dataType: "json",
+        beforeSend: function (XMLHttpRequest) {
+
+        },
+        success: function (data, status) {
+            if (data.success == true) {
+                window.location.href = '/index';
+            }
+            layer.msg(data.msg);
+        },
+        complete: function (XMLHttpRequest, textStatus) {
+
+        },
+        error: function () {
+
+        }
+    });
+    return false;
+}
+</script>
 

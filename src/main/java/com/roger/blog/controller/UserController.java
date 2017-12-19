@@ -1,16 +1,21 @@
 package com.roger.blog.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.roger.blog.config.WebSecurityConfig;
 import com.roger.blog.dao.UserMapper;
 import com.roger.blog.model.User;
 import com.roger.blog.model.json.AjaxJson;
 import com.roger.blog.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author  roger
@@ -22,13 +27,18 @@ public class UserController {
     @Autowired
     UserMapper userMapper;
 
-    @RequestMapping("/getUser")
-    public String getUser(Model model,User user) {
-        user.setLogin_name("roger");
-        user.setPassword("123456");
-         User user1 = userMapper.findUser(user);
-         model.addAttribute("people", user);
-        return "index";
+    @RequestMapping("/getUserByLoginName")
+    @ResponseBody
+    public JSON getUserByLoginName(String login_name) {
+        User user = new User();
+        user.setLogin_name(login_name);
+        User getUser = userMapper.findUser(user);
+        JSONObject result = new JSONObject();
+        result.put("valid",true);
+        if (getUser != null) {
+            result.put("valid",false);
+        }
+        return result;
     }
 
     /**
@@ -52,9 +62,7 @@ public class UserController {
         }
         return json;
     }
-    @RequestMapping("getUserByLoginName")
-    @ResponseBody
-    public AjaxJson getUserByLoginName(String login_name){
-        return null;
-    }
+
+
+
 }

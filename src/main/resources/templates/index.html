@@ -2,10 +2,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Test</title>
-    <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+    <link th:href="@{../css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{../css/bootstrap-theme.min.css}" rel="stylesheet" />
 </head>
 <body>
-<h1><p th:text="你好" ></p></h1>
+<h1><p th:text="'你好' + ${user.name}" ></p></h1>
 </body>
 </html>

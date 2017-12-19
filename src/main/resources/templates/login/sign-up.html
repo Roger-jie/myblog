@@ -1,6 +1,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
                      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-                     layout:decorator="login/main">
+                     layout:decorator="/main">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -104,8 +104,8 @@ $(function () {
                     },
                     threshold: 4, //有6字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
                     remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
-                        url: '',//验证地址
-                        message: '用户已存在',//提示消息
+                        url: '/user/getUserByLoginName',//验证地址
+                        message: '登录名已存在',//提示消息
                         delay: 2000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
                         type: 'POST'//请求方式
                         /**自定义提交数据，默认值提交当前input value
@@ -125,6 +125,14 @@ $(function () {
             },
 
             name :{
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and can\'t be empty'
+                    }
+                }
+            },
+            email :{
                 message: 'The username is not valid',
                 validators: {
                     notEmpty: {
@@ -160,7 +168,8 @@ $(function () {
 function  saveUser() {
     var _validator = $('#signUpForm').data('bootstrapValidator');
     if (!_validator.isValid()) {
-        alert('请填写完整!');
+        _validator.validate();
+        layer.msg('请将信息填写完整!');
         return  false;
     }
         //表单提交的方法、比如ajax提交
@@ -176,7 +185,16 @@ function  saveUser() {
 
             },
             success: function (data, status) {
-                alert("msg: " + data.msg);
+                layer.msg('保存成功,请前往登录页面', {
+                    time: 20000, //20s后自动关闭
+                    btn: ['好的','取消'],
+                    yes: function(){
+                        window.location.href = '/login/loginHtml';
+                    },
+                    btn2:function(){
+                        location.reload();
+                    }
+                });
             },
             complete: function (XMLHttpRequest, textStatus) {
 
@@ -189,19 +207,19 @@ function  saveUser() {
     }
 //获取formJSON对象
 function getFormJson(form) {
-    var user = {};
+    var o = {};
     var a = $(form).serializeArray();
     $.each(a, function () {
-        if (user[this.name] !== undefined) {
-            if (!user[this.name].push) {
-                user[this.name] = [user[this.name]];
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
             }
-            user[this.name].push(this.value || '');
+            o[this.name].push(this.value || '');
         } else {
-            user[this.name] = this.value || '';
+            o[this.name] = this.value || '';
         }
     });
-    return user;
+    return o;
 }
 
 
