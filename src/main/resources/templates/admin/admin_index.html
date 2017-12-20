@@ -1,38 +1,35 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="/main">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>LOVE YUAN BLOG 后台管理系统</title>
 </head>
 <body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
+<div class="layui-layout layui-layout-admin kit-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">MyBlog</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a href="javascript:;">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    贤心
+                <a href="javascript:;" >
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" th:text="${user.name}"/>
                 </a>
             </li>
-            <li class="layui-nav-item"><a href="">退了</a></li>
+            <li class="layui-nav-item"><a href="javascript:logout();">退了</a></li>
         </ul>
     </div>
 
-    <div class="layui-side layui-bg-black">
+    <div class="layui-side layui-bg-black ">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">文章</a>
+                    <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>文章管理</span></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
+                        <dd><a href="/adminArticle" target="iframe"><i class="layui-icon">&#xe658;</i><span> 文章发布</span></a></dd>
+                        <dd><a href="javascript:;" target="iframe"><i class="layui-icon">&#xe658;</i><span> 文章管理</span></a></dd>
                         <dd><a href="javascript:;">列表三</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a href="javascript:;" >超链接</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -49,9 +46,10 @@
         </div>
     </div>
 
-    <div class="layui-body">
+    <div class="layui-body" id="container">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域</div>
+        <iframe class="body-iframe" name="iframe" width="100%" height="99%" frameborder="0">
+        </iframe>
     </div>
 
     <div class="layui-footer">
@@ -61,10 +59,46 @@
 </div>
 <script>
     //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-
+   layui.use(['layer', 'element'], function(){
+        var element = layui.element
+                ,layer = layui.layer;
+       layer.msg('你好!')
     });
+    /*var message;
+    layui.config({
+        base: 'build/js/'
+    }).use(['app', 'message'], function() {
+        var app = layui.app,
+                $ = layui.jquery,
+                layer = layui.layer;
+        //将message设置为全局以便子页面调用
+        message = layui.message;
+        //主入口
+     /!*   app.set({
+            type: 'iframe'
+        }).init();*!/
+    });*/
+/*    function articleList(){
+        $('#content').load('/adminArticle');
+    }*/
+    function logout(){
+        layer.open({
+            content: '确定退出吗?'
+            ,offset: '200px'
+            ,area: 'auto',
+            btn : ['确定','取消']
+            ,yes: function(index, layero){
+                //按钮【按钮一】的回调
+                window.location.href = '/login/logout';
+            }
+            ,btn2: function(index, layero){
+                //按钮【按钮二】的回调
+                layer.close();
+                //return false 开启该代码可禁止点击该按钮关闭
+            }
+        });
+    }
+
 </script>
 </body>
 </html>

@@ -13,9 +13,17 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/index")
-    public String index(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user, Model model){
-        model.addAttribute("user" ,user);
+    @RequestMapping("/")
+    public String index(){
         return "index";
+    }
+    @RequestMapping("/adminIndex")
+    public String adminIndex(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user, Model model){
+        model.addAttribute("user" ,user);
+        return "admin/admin_index";
+    }
+    @RequestMapping("/adminArticle")
+    public String adminArticle(){
+        return "admin/admin_article";
     }
 }

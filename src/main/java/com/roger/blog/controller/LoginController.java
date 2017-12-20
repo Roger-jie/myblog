@@ -51,4 +51,10 @@ public class LoginController {
     }
     return json;
     }
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession httpSession){
+        httpSession.removeAttribute(WebSecurityConfig.SESSION_KEY);
+        return "login/login";
+    }
 }

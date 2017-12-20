@@ -82,96 +82,21 @@
 </body>
 </html>
 <script>
-$(function () {
-    $('#signUpForm').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            login_name: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required and can\'t be empty'
-                    },
-                    stringLength: {
-                        min: 4,
-                        max: 10,
-                        message: '用户名长度必须在4到10之间'
-                    },
-                    threshold: 4, //有6字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
-                    remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
-                        url: '/user/getUserByLoginName',//验证地址
-                        message: '登录名已存在',//提示消息
-                        delay: 2000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
-                        type: 'POST'//请求方式
-                        /**自定义提交数据，默认值提交当前input value
-                         *  data: function(validator) {
-                               return {
-                                   password: $('[name="passwordNameAttributeInYourForm"]').val(),
-                                   whatever: $('[name="whateverNameAttributeInYourForm"]').val()
-                               };
-                            }
-                         */
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: '用户名由数字字母下划线和.组成'
-                    }
-                }
-            },
+    layui.use(['form', 'layedit', 'laydate'], function() {
+        var form = layui.form
+                , layer = layui.layer
+                , layedit = layui.layedit
+                , laydate = layui.laydate;
 
-            name :{
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required and can\'t be empty'
-                    }
-                }
-            },
-            email :{
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required and can\'t be empty'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'The password is required and can\'t be empty'
-                    },
-                    identical:{
-                        field: 'rePassword',
-                        message: '两次密码不一致'
-                    }
-                }
-            },
-            rePassword:{
-                validators: {
-                    notEmpty: {
-                        message: 'The password is required and can\'t be empty'
-                    },
-                    identical:{
-                        field: 'password',
-                        message: '两次密码不一致'
-                    }
-                }
-            },
-        }
     });
-});
+
 function  saveUser() {
-    var _validator = $('#signUpForm').data('bootstrapValidator');
-    if (!_validator.isValid()) {
-        _validator.validate();
-        layer.msg('请将信息填写完整!');
-        return  false;
-    }
+//    var _validator = $('#signUpForm').data('bootstrapValidator');
+//    if (!_validator.isValid()) {
+//        _validator.validate();
+//        layer.msg('请将信息填写完整!');
+//        return  false;
+//    }
         //表单提交的方法、比如ajax提交
         var _data = getFormJson('#signUpForm');
         delete  _data.rePassword;
