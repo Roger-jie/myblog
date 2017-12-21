@@ -29,14 +29,15 @@ public class UserController {
 
     @RequestMapping("/getUserByLoginName")
     @ResponseBody
-    public JSON getUserByLoginName(String login_name) {
+    public AjaxJson getUserByLoginName(String login_name) {
         User user = new User();
         user.setLogin_name(login_name);
         User getUser = userMapper.findUser(user);
-        JSONObject result = new JSONObject();
-        result.put("valid",true);
+        AjaxJson result = new AjaxJson();
+        //result.put("valid",true);
         if (getUser != null) {
-            result.put("valid",false);
+            result.setSuccess(false);
+            result.setMsg("登录名已经存在");
         }
         return result;
     }
