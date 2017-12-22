@@ -9,12 +9,14 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin kit-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">MyBlog</div>
+        <div class="layui-logo">
+            <a class="logo" href="" style="color: #cbcdd0"><i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">&#xe609;</i> LoveYuan's Blog</a>
+        </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;" >
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" th:text="${user.name}"/>
+                    <img th:src="@{../images/lufu.jpg}" class="layui-nav-img" th:text="${user.name}"/>
                 </a>
             </li>
             <li class="layui-nav-item"><a href="javascript:logout();">退了</a></li>
@@ -24,12 +26,12 @@
     <div class="layui-side layui-bg-black ">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo">
+            <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="left-menu">
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>文章管理</span></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/adminArticle" target="iframe"><i class="layui-icon">&#xe658;</i><span> 文章发布</span></a></dd>
-                        <dd><a href="javascript:;" target="iframe"><i class="layui-icon">&#xe658;</i><span> 文章管理</span></a></dd>
+                        <dd id="S001" name="/adminArticle"><a href="javascript:;"><span> 文章发布</span></a></dd>
+                        <dd><a href="javascript:;"><i class="layui-icon">&#xe658;</i><span> 文章管理</span></a></dd>
                         <dd><a href="javascript:;">列表三</a></dd>
                         <dd><a href="javascript:;" >超链接</a></dd>
                     </dl>
@@ -49,9 +51,15 @@
     </div>
 
     <div class="layui-body" id="container">
-        <!-- 内容主体区域 -->
+        <div class="layui-tab layui-tab-brief" lay-filter="tab-switch" lay-allowClose="true">
+            <ul class="layui-tab-title">
+            </ul>
+            <div class="layui-tab-content">
+            </div>
+        </div>
+        <!--&lt;!&ndash; 内容主体区域 &ndash;&gt;
         <iframe class="body-iframe" name="iframe" width="100%" height="99%" frameborder="0">
-        </iframe>
+        </iframe>-->
     </div>
 
     <div class="layui-footer">
@@ -60,11 +68,47 @@
     </div>
 </div>
 <script>
+    var element,layer;
     //JavaScript代码区域
    layui.use(['layer', 'element'], function(){
-        var element = layui.element
-                ,layer = layui.layer;
+         element = layui.element;
+         layer = layui.layer;
+
+       element.on('nav(left-menu)', function(elem){
+           addTab(elem[0].innerText,elem[0].attributes[1].value,elem[0].id);
+       });
+
     });
+    /**
+     * 新增tab选项卡，如果已经存在则打开已经存在的，不存在则新增
+     * @param tabTitle 选项卡标题名称
+     * @param tabUrl 选项卡链接的页面URL
+     * @param tabId 选项卡id
+     */
+    function addTab(tabTitle,tabUrl,tabId){
+        if ($(".layui-tab-title li[lay-id=" + tabId + "]").length > 0) {
+            element.tabChange('tab-switch', tabId);
+        }else{
+            element.tabAdd('tab-switch', {
+                title: tabTitle
+                ,content: '<iframe src='+tabUrl+' width="100%" style="min-height: 450px" frameborder="0" scrolling="auto" onload="setIframeHeight(this)"></iframe>' // 选项卡内容，支持传入html
+                ,id: tabId //选项卡标题的lay-id属性值
+            });
+            element.tabChange('tab-switch', tabId); //切换到新增的tab上
+        }
+    }
+    /**
+     * ifrme自适应页面高度，需要设定min-height
+     * @param iframe
+     */
+    function setIframeHeight(iframe) {
+        if (iframe) {
+            var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            if (iframeWin.document.body) {
+                iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+            }
+        }
+    };
     /*var message;
     layui.config({
         base: 'build/js/'
@@ -99,7 +143,6 @@
             }
         });
     }
-
 </script>
 </body>
 </html>

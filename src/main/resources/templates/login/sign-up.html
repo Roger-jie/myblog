@@ -11,10 +11,7 @@
 
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-        <div class="layui-logo">
-            <a class="logo" href="" style="color: #cbcdd0"><i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">&#xe609;</i> LoveYuan's Blog</a>
-        </div>
+    <div class="layui-header" layout:include = "/header">
     </div>
     <div class="content-area container login-content" style="width:100%">
         <div class="layui-tab">
@@ -57,7 +54,7 @@
                             </div>
                         </div>
                         <div class="layui-form-item login-btn-box">
-                            <button class="layui-btn" lay-submit="" lay-filter="signUp-box" id="signUp">立即注册</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="signUp-box">立即注册</button>
                             <span style="padding-left:20px;"><a href="/login/loginHtml">已有账号？登录</a></span>
                         </div>
                     </form>
@@ -66,29 +63,13 @@
         </div>
     </div>
 </div>
-<footer class="footer">
-    <div class="footavatar site-footer clearfix u-textAlignCenter">
-        <img th:src="@{../images/lufu.jpg}" alt="官方微信二维码" title="扫码关注官方微信，更多资讯抢先获取" class="footphoto"/>
-        <ul class="footinfo">
-            <p class="fname"><a>LoveYuan's Blog</a></p>
-            <p class="finfo">LoveYuan's Blog</p>
-        </ul>
-    </div>
-    <div class="Copyright">
-        <p>
-            <!-- <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c4f068d3baefa9f0e31f6271d9bebe70e542830dd6e713d7689fd2a084a952e7">
-                  <img src="//pub.idqqimg.com/wpa/images/group.png" alt="php行业交流" title="php行业交流" border="0"/>
-              </a>-->
-        </p><br/>
-        Powered by <a href="/" target="_blank">LoveYuan's Blog</a>
-    </div>
+<footer layout:include = "/footer">
 </footer>
 <!--<ul class="layui-fixbar"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;" ></li></ul>-->
 </body>
 </html>
-<link rel="stylesheet" th:href="@{../css/home.css}"/>
 <script>
-    layui.use(['form', 'layedit', 'laydate','util'], function() {
+    layui.use(['form', 'layedit', 'laydate','util',], function() {
         var form = layui.form
                 , layer = layui.layer
                 , layedit = layui.layedit
@@ -130,85 +111,48 @@
                 }
             },
             loginName:function (value){
-                $.ajax({
-                    type: 'post',
-                    url: '/user/addUser',
-                    data: {'login_name' : value},
-                    dataType: "json",
-                    success: function (data, status) {
-                        if(data.success == false){
-                            return data.msg;
-                        }
-                    },
-                });
+                var _data = getLoginName(value);
+                if (!_data.success){
+                    return _data.msg;
+                }
             }
         });
         form.on('submit(signUp-box)', function(_data){
-            layer.alert(JSON.stringify(_data.field), {
-                 title: '最终的提交信息'
+              $.ajax({
+                 type: 'post',
+                 url: '/user/addUser',
+                 data: _data.field,
+                 dataType: "json",
+                 success: function (data, status) {
+                     layer.msg('保存成功,前往登录页面登录', {
+                         time: 20000, //20s后自动关闭
+                         btn: ['好的','取消'],
+                         yes: function(){
+                             window.location.href = '/login/loginHtml';
+                         },
+                         btn2:function(){
+                             location.reload();
+                         }
+                     });
+                 },
              });
-            $.ajax({
-                type: 'post',
-                url: '/user/addUser',
-                data: _data,
-                dataType: "json",
-                success: function (data, status) {
-                    layer.msg('保存成功,请前往登录页面', {
-                        time: 20000, //20s后自动关闭
-                        btn: ['好的','取消'],
-                        yes: function(){
-                            window.location.href = '/login/loginHtml';
-                        },
-                        btn2:function(){
-                            location.reload();
-                        }
-                    });
-                },
-            });
-
+            return false;
+     });
     });
+ var reslut;
+ function getLoginName(value) {
+    $.ajax({
+        async:false,
+        type: 'post',
+        url: '/user/getUserByLoginName',
+        data: {'login_name' : value},
+        dataType: "json",
+        success: function (data) {
+            reslut =  data;
+        }
     });
-
-/*function  saveUser() {
-//    var _validator = $('#signUpForm').data('bootstrapValidator');
-//    if (!_validator.isValid()) {
-//        _validator.validate();
-//        layer.msg('请将信息填写完整!');
-//        return  false;
-//    }
-        //表单提交的方法、比如ajax提交
-        var _data = getFormJson('#signUpForm');
-        delete  _data.rePassword;
-        console.info(_data);
-        $.ajax({
-            type: 'post',
-            url: '/user/addUser',
-            data: _data,
-            dataType: "json",
-            beforeSend: function (XMLHttpRequest) {
-
-            },
-            success: function (data, status) {
-                layer.msg('保存成功,请前往登录页面', {
-                    time: 20000, //20s后自动关闭
-                    btn: ['好的','取消'],
-                    yes: function(){
-                        window.location.href = '/login/loginHtml';
-                    },
-                    btn2:function(){
-                        location.reload();
-                    }
-                });
-            },
-            complete: function (XMLHttpRequest, textStatus) {
-
-            },
-            error: function () {
-
-            }
-        });
-        return false;
-    }*/
+    return reslut;
+}
 //获取formJSON对象
 function getFormJson(form) {
     var o = {};
