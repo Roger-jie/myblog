@@ -26,6 +26,8 @@ public class Article {
     private String comment_count;
     //分类
     private String category;
+    //MD值
+    private String md;
 
     public Article() {}
 
@@ -111,5 +113,13 @@ public class Article {
 
     public void setClick(int click) {
         this.click = click;
+    }
+
+    public String getMd() {
+        return md;
+    }
+
+    public void setMd(String md) {
+        this.md = md;
     }
 }

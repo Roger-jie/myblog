@@ -17,13 +17,13 @@ public class IndexController {
     public String index(){
         return "index";
     }
+    /**
+     * 后台管理首页
+     */
     @RequestMapping("/adminIndex")
     public String adminIndex(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user, Model model){
         model.addAttribute("user" ,user);
         return "admin/admin_index";
     }
-    @RequestMapping("/adminArticle")
-    public String adminArticle(){
-        return "admin/admin_article";
-    }
+
 }
