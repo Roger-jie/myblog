@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>LoveYuan's Blog 后台管理系统</title>
 </head>
-<body class="layui-layout-body">
+<body class="layui-layout-body" >
 <div class="layui-layout layui-layout-admin kit-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">
@@ -30,10 +30,10 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>文章管理</span></a>
                     <dl class="layui-nav-child">
-                        <dd id="S001" name="/adminArticle"><a href="javascript:;"><span>文章发布</span></a></dd>
-                        <dd id="S002" name="/adminArticleList"><a href="javascript:;"><span>文章列表</span></a></dd>
+                        <dd><a href="javascript:;" data-url="/adminArticle" data-id="S001"><span>文章发布</span></a></dd>
+                        <dd><a href="javascript:;"  data-url="/adminArticleList" data-id="S002"><span>文章列表</span></a></dd>
                         <dd><a href="javascript:;">列表三</a></dd>
-                        <dd id="S004" name="http://www.baidu.com"><a href="javascript:;" >超链接</a></dd>
+                        <dd><a href="javascript:;" data-url="http://www.baidu.com" data-id="S004">超链接</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -50,8 +50,8 @@
         </div>
     </div>
 
-    <div class="layui-body" id="container">
-        <div class="layui-tab layui-tab-brief" lay-filter="tab-switch" lay-allowClose="true">
+    <div class="layui-body" style="overflow:scroll;overflow-y:hidden;overflow-x:hidden">
+        <div style="margin:0;position:absolute;top:4px;bottom:0px;width:100%;" class="layui-tab layui-tab-brief" lay-filter="tab" lay-allowclose="true">
             <ul class="layui-tab-title">
             </ul>
             <div class="layui-tab-content">
@@ -74,10 +74,37 @@
          element = layui.element;
          layer = layui.layer;
 
-       element.on('nav(left-menu)', function(elem){
+       /*element.on('nav(left-menu)', function(elem){
            addTab(elem[0].innerText,elem[0].attributes[1].value,elem[0].id);
-       });
+       });*/
+       //监听左侧导航点击
+       element.on('nav(left-menu)', function (elem) {
+           var url = $(elem).children('a').attr('data-url');   //页面url
+           var id = $(elem).children('a').attr('data-id');     //tab唯一Id
+           var title = $(elem).children('a').text();           //菜单名称
+           if (title == "首页") {
+               element.tabChange('tab', 0);
+               return;
+           }
+           if (url == undefined) return;
 
+           var tabTitleDiv = $('.layui-tab[lay-filter=\'tab\']').children('.layui-tab-title');
+           var exist = tabTitleDiv.find('li[lay-id=' + id + ']');
+           if (exist.length > 0) {
+               //切换到指定索引的卡片
+               element.tabChange('tab', id);
+           } else {
+               var index = layer.load(1);
+               //由于Ajax调用本地静态页面存在跨域问题，这里用iframe
+               setTimeout(function () {
+                   //模拟菜单加载
+                   layer.close(index);
+                   element.tabAdd('tab', { title: title, content: '<iframe src="' + url + '" style="width:100%;height:95%;border:none;outline:none;" scrolling="auto"></iframe>', id: id });
+                   //切换到指定索引的卡片
+                   element.tabChange('tab', id);
+               }, 500);
+           }
+       });
     });
     /**
      * 新增tab选项卡，如果已经存在则打开已经存在的，不存在则新增

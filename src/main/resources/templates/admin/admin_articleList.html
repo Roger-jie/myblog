@@ -1,7 +1,57 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="/main">
-<body>
 
+<body>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+    <legend style="text-align:center;">文章列表</legend>
+        <table class="layui-table"  lay-filter="article" id="articleTable">
+
+        </table>
+</fieldset>
 </body>
 </html>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        //所获得的 tableIns 即为当前容器的实例
+        var tableIns = table.render({
+            elem: '#articleTable'
+            ,id : 'articleTable'
+            ,url: '/adminGetArticleList' //设置异步接口
+            ,page : true
+            ,limits: [10, 20, 30, 40, 50] //分页记录数列表项，默认到90
+            ,limit: 10   //默认每页多少条，默认60
+            ,height: 580
+            ,width: 1200
+            ,cols: [[
+                 {checkbox: true}
+                ,{field: 'id', title: 'ID', width: 80}
+                ,{field: 'title', title: '标题', width: 200}
+                ,{field: 'describes', title: '描述', width: 200}
+                ,{field: 'category', title: '分类', width: 100}
+                ,{field: 'is_show', title: '是否显示', width: 120}
+                ,{field:'create_date',title: '创建时间', width:160}
+                ,{field:'comment_count',title: '评论数', width:80}
+                ,{fixed: 'right', width:200, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
+        });
+        table.on('tool(article)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.msg('ID：'+ data.id + ' 的查看操作');
+            } else if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+                layer.alert('编辑行：<br/>'+ JSON.stringify(data))
+            }
+        });
+    });
+</script>
