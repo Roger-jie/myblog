@@ -29,6 +29,8 @@ public class Article {
     //MD值
     private String md;
 
+    private int is_show;
+
     public Article() {}
 
     public Article(int id, String title, String describes, String keyword, int click, String content, Date create_date, String comment_count, String category) {
@@ -121,5 +123,13 @@ public class Article {
 
     public void setMd(String md) {
         this.md = md;
+    }
+
+    public int getIs_show() {
+        return is_show;
+    }
+
+    public void setIs_show(int is_show) {
+        this.is_show = is_show;
     }
 }

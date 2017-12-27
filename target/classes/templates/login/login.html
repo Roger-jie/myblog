@@ -26,13 +26,13 @@
                             <div class="layui-form-item ">
                                 <label class="layui-form-label">登录用户名</label>
                                 <div class="layui-input-inline">
-                                    <input id="login_name" class="layui-input" lay-verify="required" name="login_name" value="" autofocus="" autocomplete="off" placeholder="请输入登录用户名" type="text" />
+                                    <input id="login_name" class="layui-input" lay-verify="required" name="login_name" value="roger" autofocus="" autocomplete="off" placeholder="请输入登录用户名" type="text" />
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">登录密码</label>
                                 <div class="layui-input-inline">
-                                    <input name="password" lay-verify="required" autocomplete="off" placeholder="请输入登录密码" class="layui-input" autofocus="" type="password"/>
+                                    <input name="password" lay-verify="required" autocomplete="off" placeholder="请输入登录密码" class="layui-input" autofocus="" type="password" value="123456" />
                                 </div>
                             </div>
 
@@ -51,19 +51,20 @@
 
     </footer>
 </body>
+
 </html>
 <script>
+    /*<![CDATA[*/
     layui.use(['form', 'layedit', 'laydate','element'], function() {
         var form = layui.form
-                , layer = layui.layer
-                , layedit = layui.layedit
-                , laydate = layui.laydate
-                ,element = layui.element;
-
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate
+            ,element = layui.element;
         form.on('submit(login-box)', function(data){
-           /* layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            });*/
+            /* layer.alert(JSON.stringify(data.field), {
+                 title: '最终的提交信息'
+             });*/
             $.ajax({
                 type: 'post',
                 url: '/login/userLogin',
@@ -89,35 +90,36 @@
         });
     });
 
-function login() {
-  // var _validator = $('#loginForm').data('bootstrapValidator');
+    function login() {
+        // var _validator = $('#loginForm').data('bootstrapValidator');
 //    if (!_validator.isValid()) {
 //        _validator.validate();
 //        layer.msg('请填写用户名和密码!');
 //        return  false;
 //    }
-    $.ajax({
-        type: 'post',
-        url: '/login/userLogin',
-        data: {'login_name' : $('#login_name').val(), 'password' : $('#password').val()},
-        dataType: "json",
-        beforeSend: function (XMLHttpRequest) {
+        $.ajax({
+            type: 'post',
+            url: '/login/userLogin',
+            data: {'login_name' : $('#login_name').val(), 'password' : $('#password').val()},
+            dataType: "json",
+            beforeSend: function (XMLHttpRequest) {
 
-        },
-        success: function (data, status) {
-            if (data.success == true) {
-                window.location.href = '/adminIndex';
+            },
+            success: function (data, status) {
+                if (data.success == true) {
+                    window.location.href = '/adminIndex';
+                }
+                layer.msg(data.msg);
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+
+            },
+            error: function () {
+
             }
-            layer.msg(data.msg);
-        },
-        complete: function (XMLHttpRequest, textStatus) {
-
-        },
-        error: function () {
-
-        }
-    });
-    return false;
-}
+        });
+        return false;
+    }
+    /*]]>*/
 </script>
 

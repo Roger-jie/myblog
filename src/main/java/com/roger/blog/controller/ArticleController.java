@@ -40,10 +40,9 @@ public class ArticleController {
     @RequestMapping(value = "/adminGetArticleList",method = RequestMethod.GET)
     @ResponseBody
     public PageList getAdminArticleList(Page page){
-        System.out.println("我再走"+page.getPage());
         PageList pageList = new PageList();
-        Article article = new Article();
         List<Article> articleList = articleMapper.getArticleListByLimt(page);
+        System.out.println(articleList.get(0).getCreate_date());
         int count = articleMapper.getArticleCount();
         pageList.setCount(count);
         pageList.setData(articleList);

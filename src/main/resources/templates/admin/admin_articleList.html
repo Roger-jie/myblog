@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="/main">
@@ -19,6 +20,8 @@
 <script>
     layui.use('table', function(){
         var table = layui.table;
+
+
         //所获得的 tableIns 即为当前容器的实例
         var tableIns = table.render({
             elem: '#articleTable'
@@ -36,7 +39,7 @@
                 ,{field: 'describes', title: '描述', width: 200}
                 ,{field: 'category', title: '分类', width: 100}
                 ,{field: 'is_show', title: '是否显示', width: 120}
-                ,{field:'create_date',title: '创建时间', width:160}
+                ,{field:'create_date',title: '创建时间', width:160, templet: '<div>{{ layui.laytpl.toDateString(d.create_date,"yyyy-MM-dd")}}</div>'}
                 ,{field:'comment_count',title: '评论数', width:80}
                 ,{fixed: 'right', width:200, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
         });
