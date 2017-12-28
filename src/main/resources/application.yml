@@ -24,6 +24,8 @@ spring:
             #additional-paths: src/main/java
             #classpath目录下的WEB-INF文件夹内容修改不重启
           exclude: WEB-INF/**
+  thymeleaf:
+    mode : LEGACYHTML5
   datasource:
     url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root

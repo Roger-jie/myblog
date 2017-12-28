@@ -19,7 +19,7 @@ public class UploadController {
         try {
             request.setCharacterEncoding( "utf-8" );
             response.setHeader( "Content-Type" , "text/html" );
-            String rootPath = request.getSession().getServletContext().getRealPath("/resources/upload/");
+            String rootPath = request.getSession().getServletContext().getRealPath("/upload/");
 
             /**
              * 文件路径不存在则需要创建文件路径
@@ -34,7 +34,7 @@ public class UploadController {
             FileUtils.copyInputStreamToFile(attach.getInputStream(), realFile);
 
             //下面response返回的json格式是editor.md所限制的，规范输出就OK
-            response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"/resources/upload/" + attach.getOriginalFilename() + "\"}" );
+            response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"/upload/" + attach.getOriginalFilename() + "\"}" );
         } catch (Exception e) {
             try {
                 response.getWriter().write( "{\"success\":0}" );

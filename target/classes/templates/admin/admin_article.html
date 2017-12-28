@@ -22,31 +22,28 @@
         <div class="layui-input-block">
             <select name="category" lay-verify="required" lay-search="">
                 <option value="">直接选择或搜索选择</option>
-                <option value="1">layer</option>
-                <option value="2">form</option>
-                <option value="3">layim</option>
-                <option value="4">element</option>
-                <option value="5">laytpl</option>
+                <option value="1">java</option>
             </select>
         </div>
     </div>
-    <div class="layui-form-item">
+   <!-- <div class="layui-form-item">
         <label class="layui-form-label">标签</label>
         <div class="layui-input-block">
-            <input name="like[write]" title="写作" type="checkbox"/>
-            <input name="like[read]" title="阅读"  type="checkbox"/>
-            <input name="like[game]" title="游戏" type="checkbox"/>
+            <input name="tag[write]" title="写作" type="checkbox" value="1"/>
+            <input name="tag[read]" title="阅读"  type="checkbox" value="2"/>
+            <input name="tag[game]" title="游戏" type="checkbox" value="3"/>
         </div>
-    </div>
+    </div>-->
     <div class="layui-form-item">
         <label class="layui-form-label">是否显示</label>
         <div class="layui-input-block">
-            <input name="is_show" lay-skin="switch" lay-text="ON|OFF" type="checkbox"/>
+            <input type="radio" name="is_show" value="0" title="是">
+            <input type="radio" name="is_show" value="1" title="否" checked>
         </div>
     </div>
     <label class="layui-form-label">内容</label>
     <div class="editormd" id="test-editormd">
-        <textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc" id="editormd"></textarea>
+        <textarea class="editormd-markdown-textarea" name="md" id="md"></textarea>
         <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
         <!-- html textarea 需要开启配置项 saveHTMLToTextarea == true -->
         <textarea class="editormd-html-textarea" name="content" id="content"></textarea>
@@ -68,11 +65,24 @@
             , laydate = layui.laydate;
 
         //监听提交
-        form.on('submit(save)', function(data){
-            layer.alert(JSON.stringify(data.field), {
+        form.on('submit(save)', function(_data){
+            /*layer.alert(JSON.stringify(_data.field), {
                 title: '最终的提交信息'
 
-            })
+            });*/
+            var _param = _data.field;
+            console.info(_param);
+            $.ajax({
+                type: 'post',
+                url: '/adminAddArticle',
+                data: _data.field,
+                dataType: "json",
+                success: function (data, status) {
+                    layer.alert(data.msg, {
+
+                    });
+                },
+            });
             return false;
         });
 

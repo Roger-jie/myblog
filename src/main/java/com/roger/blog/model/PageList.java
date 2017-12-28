@@ -16,6 +16,14 @@ public class PageList {
 
     private List data;
 
+    public PageList(){
+
+    }
+    public PageList(Integer count,List data){
+        this.count = count;
+        this.data = data;
+    }
+
     public int getCode() {
         return code;
     }

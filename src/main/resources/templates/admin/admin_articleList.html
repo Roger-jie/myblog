@@ -17,10 +17,13 @@
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
+<script type="text/html" id="switchTpl">
+    <input type="checkbox" name="is_show" value="{{d.is_show}}" lay-skin="switch" lay-text="是|否" lay-filter="sexDemo" {{ (d.is_show == 0) ? ('checked') : ('') }} />
+</script>
 <script>
     layui.use('table', function(){
-        var table = layui.table;
-
+        var table = layui.table
+        ,form = layui.form;
 
         //所获得的 tableIns 即为当前容器的实例
         var tableIns = table.render({
@@ -35,13 +38,13 @@
             ,cols: [[
                  {checkbox: true}
                 ,{field: 'id', title: 'ID', width: 80}
-                ,{field: 'title', title: '标题', width: 200}
-                ,{field: 'describes', title: '描述', width: 200}
+                ,{field: 'title', title: '标题', width: 250}
                 ,{field: 'category', title: '分类', width: 100}
-                ,{field: 'is_show', title: '是否显示', width: 120}
+                ,{field: 'is_show', title: '是否显示', width: 120,templet: '#switchTpl'}
                 ,{field:'create_date',title: '创建时间', width:160, templet: '<div>{{ layui.laytpl.toDateString(d.create_date,"yyyy-MM-dd")}}</div>'}
                 ,{field:'comment_count',title: '评论数', width:80}
-                ,{fixed: 'right', width:200, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
+                ,{field: 'click', title: '点击量', width: 100}
+                ,{fixed: 'right', width:255, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
         });
         table.on('tool(article)', function(obj){
             var data = obj.data;
@@ -53,7 +56,7 @@
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
-                layer.alert('编辑行：<br/>'+ JSON.stringify(data))
+                window.location.href = '/adminArticleUpdate?id='+data.id;
             }
         });
     });
