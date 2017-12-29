@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/main">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${article.title}"></title>
+    <link rel="stylesheet" th:href="@{../editormd/css/editormd.preview.min.css}" />
+    <script th:src="@{../editormd/lib/marked.min.js}"></script>
+    <script th:src="@{../editormd/lib/prettify.min.js}"></script>
+</head>
+<body>
+<div class="layui-container">
+        <div class="content" id="content" ></div>
+</div>
+</body>
+</html>
+<script  th:inline="javascript">
+    //先将内容写入div内
+    $(document).ready(function() {
+        $('#content').append([[${article.content}]]);
+    });
+    //渲染内容
+    editormd.markdownToHTML("content",{
+        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+        emoji           : true,
+        taskList        : true,
+        tex             : true,  // 默认不解析
+        flowChart       : true,  // 默认不解析
+        sequenceDiagram : true,  // 默认不解析
+    });
+</script>

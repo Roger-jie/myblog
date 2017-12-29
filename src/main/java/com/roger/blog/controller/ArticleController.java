@@ -85,4 +85,13 @@ public class ArticleController {
         }
         return ajaxJson;
     }
+
+    @RequestMapping("/articleDetail")
+    public String articleDetail(String id,Model model){
+        Article article = articleMapper.getArticleByID(id);
+        model.addAttribute("article",article);
+        return "article/article";
+    }
+
+
 }

@@ -5,7 +5,7 @@
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
     <legend style="text-align:center;">文章发布</legend>
     <form class="layui-form" action="" style="margin-top: 10px;">
-        <input type="hidden" th:value="${article.id}">
+        <input type="hidden" th:value="${article.id}" name="id">
         <div class="layui-form-item">
             <label class="layui-form-label">标题</label>
             <div class="layui-input-block">
@@ -86,7 +86,13 @@
                 data: _data.field,
                 dataType: "json",
                 success: function (data, status) {
-                        window.location.href = '/adminArticleUpdate';
+                    layer.confirm('保存成功', {
+                        btn: ['返回列表','取消'] //按钮
+                    }, function(){
+                        window.location.href = '/adminArticleList';
+                    }, function(){
+                        layer.close();
+                    });
                 },
             });
             return false;
