@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/main">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset class="layui-elem-field" style="margin-top: 30px;">
+    <legend>评论列表</legend>
+    <div class="layui-btn-group demoTable" style="margin-left: 30px;margin-top:20px ">
+        <button class="layui-btn" data-type="saveCatalog">新增分类</button>
+    </div>
+    <div class="layui-field-box layui-form">
+        <table class="layui-table"  lay-filter="catalog" id="catalogTable">
+
+        </table>
+    </div>
+</fieldset>
+</body>
+</html>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate','table'], function() {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate
+            , table = layui.table;
+        //所获得的 tableIns 即为当前容器的实例
+        var tableIns = table.render({
+            elem: '#catalogTable'
+            ,id : 'catalogTable'
+            ,url: '/adminCatalogList' //设置异步接口
+            ,page : true
+            ,limits: [10, 20, 30, 40, 50] //分页记录数列表项，默认到90
+            ,limit: 10   //默认每页多少条，默认60
+            ,height: 380
+            ,width: 850
+            ,cols: [[
+                {checkbox: true}
+                ,{field: 'id', title: 'ID', width: 80}
+                ,{field: 'name', title: '分类名', width: 250}
+                ,{field: 'remark', title: '备注', width: 210}
+                ,{fixed: 'right', width:255, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
+        });
+        table.on('tool(catalog)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.open();
+            } else if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+
+            }
+        });
+       var active = {
+           saveCatalog: function () { //获取选中数据
+               $.get('/adminCatalogAdd',function (_d) {
+                   layer.open({
+                       type:1,
+                       area: '60%',
+                       content: _d,
+                       title:'分类',
+                       btn: ['提交', '取消'],
+                       success : function (layero, index) {
+                           layero.addClass('layui-form');//添加form标识
+                           layero.find('.layui-layer-btn0').attr('lay-filter', 'saveCatalog').attr('lay-submit', '');//将按钮弄成能提交的
+                           form.render();
+                       },
+                       yes:function (index, layero){
+                           form.on('submit(saveCatalog)', function (_data) {
+                               $.post('/adminAddCatalog', _data.field,function () {
+                                   layer.close(index);
+                                   window.location.reload();
+                               });
+                           });
+                           return false;
+                       }
+                   });
+               });
+           }
+       }
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>

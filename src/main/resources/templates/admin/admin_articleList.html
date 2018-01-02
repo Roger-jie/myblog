@@ -4,11 +4,13 @@
       layout:decorator="/main">
 
 <body>
-<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+<fieldset class="layui-elem-field" style="margin-top: 30px;">
     <legend style="text-align:center;">文章列表</legend>
+    <div class="layui-field-box layui-form">
         <table class="layui-table"  lay-filter="article" id="articleTable">
 
         </table>
+    </div>
 </fieldset>
 </body>
 </html>
@@ -33,7 +35,7 @@
             ,page : true
             ,limits: [10, 20, 30, 40, 50] //分页记录数列表项，默认到90
             ,limit: 10   //默认每页多少条，默认60
-            ,height: 580
+            ,height: 380
             ,width: 1200
             ,cols: [[
                  {checkbox: true}
@@ -41,7 +43,7 @@
                 ,{field: 'title', title: '标题', width: 250}
                 ,{field: 'category', title: '分类', width: 100}
                 ,{field: 'is_show', title: '是否显示', width: 120,templet: '#switchTpl'}
-                ,{field:'create_date',title: '创建时间', width:160, templet: '<div>{{ layui.laytpl.toDateString(d.create_date,"yyyy-MM-dd")}}</div>'}
+                ,{field:'create_date',title: '创建时间', width:155, templet: '<div>{{ layui.laytpl.toDateString(d.create_date,"yyyy-MM-dd")}}</div>'}
                 ,{field:'comment_count',title: '评论数', width:80}
                 ,{field: 'click', title: '点击量', width: 100}
                 ,{fixed: 'right', width:255, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
@@ -52,6 +54,17 @@
                 window.open('/articleDetail?id='+data.id);
             } else if(obj.event === 'del'){
                 layer.confirm('真的删除行么', function(index){
+                    $.ajax({
+                        type: 'get',
+                        url: '/adminDelArticle',
+                        data: {'id':index},
+                        dataType: "json",
+                        success: function (data, status) {
+                            layer.alert(data.msg, {
+
+                            });
+                        },
+                    })
                     obj.del();
                     layer.close(index);
                 });

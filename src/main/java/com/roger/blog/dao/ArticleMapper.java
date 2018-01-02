@@ -54,4 +54,7 @@ public interface ArticleMapper {
      @Update("UPDATE article SET title = #{title} ,describes = #{describes},content = #{content} , is_show = #{is_show}," +
              "category = #{category},keyword = #{keyword},md = #{md} where id = #{id}")
      void updateArticle(Article article);
+
+     @Delete("DELETE article WHERE id = #{id}")
+     void deleteArticle(@Param("id") String id);
 }

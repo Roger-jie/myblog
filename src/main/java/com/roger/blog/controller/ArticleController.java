@@ -93,5 +93,19 @@ public class ArticleController {
         return "article/article";
     }
 
+    @RequestMapping("/adminDelArticle")
+    @ResponseBody
+    public AjaxJson adminDelArticle(String id){
+        AjaxJson json = new AjaxJson();
+        try {
+            articleMapper.deleteArticle(id);
+            json.setSuccess(true);
+            json.setMsg("文章删除成功");
+        } catch (Exception e) {
+            json.setSuccess(false);
+            json.setMsg("文章删除失败");
+        }
+        return json;
+    }
 
 }
