@@ -9,8 +9,11 @@
     <script th:src="@{../editormd/lib/prettify.min.js}"></script>
 </head>
 <body>
+
+
 <div class="layui-container">
-        <div class="content" id="content" ></div>
+    <blockquote class="layui-elem-quote" th:text="${article.title}"></blockquote>
+    <div class="content" id="content" ></div>
 </div>
 </body>
 </html>

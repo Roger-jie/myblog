@@ -7,8 +7,38 @@
     <script th:src="@{../editormd/editormd.js}"></script>
 
 <script>
-    layui.use('laytpl', function() {
-        var laytpl = layui.laytpl;
+    layui.use(['laytpl','util'], function() {
+        var laytpl = layui.laytpl
+            ,util = layui.util;
+        util.fixbar({
+            bar1: false
+            ,click: function(type){
+                console.log(type);
+                var timer = null;
+                if(type === 'top'){
+                    var scrollToTop = window.setInterval(function() {
+                        var pos = window.pageYOffset;
+                        if ( pos > 0 ) {
+                            window.scrollTo( 0, pos - 20 ); // how far to scroll on each step
+                        } else {
+                            window.clearInterval( scrollToTop );
+                        }
+                    }, 16);
+                    //window.scrollBy(0,-10);scrolldelay=setTimeout(this,1000);
+                    // if(document.documentElement.scrollTop==0)clearTimeout(scrolldelay);
+                    /* cancelAnimationFrame(timer);
+                     timer = requestAnimationFrame(function fn(){
+                         var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+                         if(oTop > 0){
+                             scrollBy(0,-50);
+                             timer = requestAnimationFrame(fn);
+                         }else{
+                             cancelAnimationFrame(timer);
+                         }
+                     });*/
+                }
+            }
+        });
         laytpl.toDateString = function (d, format) {
             var date = new Date(d || new Date())
                 , ymd = [
@@ -32,7 +62,7 @@
                 .replace(/ss/g, hms[2]);
         };
         laytpl.digit = function(num, dlen, end){
-            return (num*1>10) ? num :  ('0' + num) ;
+            return (num*1>9) ? num :  ('0' + num) ;
         };
     });
 </script>

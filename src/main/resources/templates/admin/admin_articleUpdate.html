@@ -52,6 +52,13 @@
                 <input type="radio" name="is_show" value="1" title="否">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否置顶</label>
+            <div class="layui-input-block">
+                <input type="radio" name="stick" value="1" title="是">
+                <input type="radio" name="stick" value="0" title="否" checked>
+            </div>
+        </div>
         <label class="layui-form-label">内容</label>
         <div class="editormd" id="test-editormd">
             <textarea class="editormd-markdown-textarea" name="md" id="md"></textarea>
@@ -88,9 +95,10 @@
             , layer = layui.layer
             , layedit = layui.layedit
             , laydate = layui.laydate;
-
+        //给选择赋值
         $("#category").val([[${article.category}]]);
-        $("input[name=is_show][value='" + [[${article.is_show}]] + "']").attr("checked", true)
+        $("input[name=is_show][value='" + [[${article.is_show}]] + "']").attr("checked", true);
+        $("input[name=stick][value='" + [[${article.stick}]] + "']").attr("checked", true);
         form.render();
         //监听提交
         form.on('submit(save)', function(_data){

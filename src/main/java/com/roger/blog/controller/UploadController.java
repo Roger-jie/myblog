@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.roger.blog.model.json.AjaxJson;
+import com.roger.blog.util.DateUtils;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ public class UploadController {
     @Value("${web.upload-path}")
     private String webUploadPath;
 
+    //获取日期，方便创建日期文件夹
+    private static String dateString = DateUtils.getDate("yyyy-MM-dd");
     /**
      * markdown文件上传功能
      * @param request
@@ -37,7 +40,7 @@ public class UploadController {
             uploadFile(request, response, attach);
 
             //下面response返回的json格式是editor.md所限制的，规范输出就OK
-            response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"/" + attach.getOriginalFilename() + "\"}" );
+            response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"/" + dateString + attach.getOriginalFilename() + "\"}" );
         } catch (Exception e) {
             try {
                 response.getWriter().write( "{\"success\":0}" );
@@ -54,10 +57,7 @@ public class UploadController {
         try {
             uploadFile(request, response, attach);
             Map<String,Object> map = new HashMap<String,Object>();
-            Date date = new Date();
-            SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
-            String dateString = sd.format(date);
-            map.put("src", dateString +"/"+attach.getOriginalFilename());
+            map.put("src", "/"+dateString +"/"+attach.getOriginalFilename());
             json.setData(map);
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,9 +69,6 @@ public class UploadController {
     private void uploadFile(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "editormd-image-file", required = false) MultipartFile attach) throws IOException {
         request.setCharacterEncoding( "utf-8" );
         response.setHeader( "Content-Type" , "text/html" );
-        Date date = new Date();
-        SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = sd.format(date);
         String rootPath = webUploadPath + dateString;
         /**
          * 文件路径不存在则需要创建文件路径

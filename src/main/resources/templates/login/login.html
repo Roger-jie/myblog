@@ -76,8 +76,9 @@
                 success: function (data, status) {
                     if (data.success == true) {
                         window.location.href = '/adminIndex';
+                    } else {
+                        layer.msg(data.msg, {icon: 5});
                     }
-                    layer.msg(data.msg, {icon: 5});
                 },
                 complete: function (XMLHttpRequest, textStatus) {
 

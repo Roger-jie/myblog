@@ -35,6 +35,8 @@ public class Article {
 
     private String imgs;
 
+    private int stick;
+
     public Article() {}
 
     public Article(int id, String title, String describes, String keyword, int click, String content, Date create_date, String comment_count, String category) {
@@ -151,5 +153,13 @@ public class Article {
 
     public void setImgs(String imgs) {
         this.imgs = imgs;
+    }
+
+    public int getStick() {
+        return stick;
+    }
+
+    public void setStick(int stick) {
+        this.stick = stick;
     }
 }

@@ -17,7 +17,7 @@ public interface ArticleMapper {
      * @param limit 显示数
      */
      @Select("SELECT a.id id,a.title title,a.describes describes,a.create_date create_date,a.is_show is_show ," +
-             "a.comment_count comment_count,c.name category FROM article a LEFT JOIN catalog c ON a.category = c.id " +
+             "a.comment_count comment_count,c.name category,a.stick stick FROM article a LEFT JOIN catalog c ON a.category = c.id " +
              " limit #{page},#{limit}")
      List<Article> getArticleListByLimt(Page page);
 
@@ -33,8 +33,8 @@ public interface ArticleMapper {
      * 新增文章
      * @param article
      */
-     @Insert("insert into article (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md,author,imgs) values(#{title},"+
-             "#{describes},NOW(),#{content},#{is_show},0,#{category},0,#{keyword},#{md},#{author},#{imgs})")
+     @Insert("insert into article (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md,author,imgs,stick) values(#{title},"+
+             "#{describes},NOW(),#{content},#{is_show},0,#{category},0,#{keyword},#{md},#{author},#{imgs},#{stick})")
      @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
      void addArticle(Article article);
 
