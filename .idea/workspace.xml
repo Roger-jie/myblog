@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aead90f0-9a9e-43fe-8d5b-44257c745203" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/util/DateUtil.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/CatalogController.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/CatalogController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/UploadController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/dao/ArticleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/dao/ArticleMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/dao/CatalogMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/dao/CatalogMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/model/Article.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/model/Article.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/model/json/AjaxJson.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/model/json/AjaxJson.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleList.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleList.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_catalogList.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_catalogList.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_index.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" afterPath="$PROJECT_DIR$/target/classes/application.yml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/roger/blog/model/Article.class" afterPath="$PROJECT_DIR$/target/classes/com/roger/blog/model/Article.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/roger/blog/model/json/AjaxJson.class" afterPath="$PROJECT_DIR$/target/classes/com/roger/blog/model/json/AjaxJson.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/admin_article.html" afterPath="$PROJECT_DIR$/target/classes/templates/admin/admin_article.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/admin_index.html" afterPath="$PROJECT_DIR$/target/classes/templates/admin/admin_index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -160,8 +141,8 @@
       <file leaf-file-name="admin_articleUpdate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="127" column="66" lean-forward="false" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+            <state relative-caret-position="597">
+              <caret line="134" column="19" lean-forward="true" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -518,7 +499,7 @@
       <workItem from="1514858188497" duration="17256000" />
       <workItem from="1514943653022" duration="17863000" />
       <workItem from="1515029916777" duration="3270000" />
-      <workItem from="1515053304126" duration="65000" />
+      <workItem from="1515053304126" duration="322000" />
     </task>
     <task id="LOCAL-00001" summary="登录后台页面">
       <created>1513939944539</created>
@@ -590,11 +571,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514885981770</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完善细节问题">
+      <created>1515053411128</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1515053411128</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152703000" />
+    <option name="totallyTimeSpent" value="152960000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -690,7 +678,8 @@
     <MESSAGE value="文章列表" />
     <MESSAGE value="完善文章发布编辑O(∩_∩)O哈哈~笑哭 哭笑 笑出眼泪 笑哭 哭笑 笑出眼泪 破涕为笑 笑死 笑尿 笑cry" />
     <MESSAGE value="分类" />
-    <option name="LAST_COMMIT_MESSAGE" value="分类" />
+    <MESSAGE value="完善细节问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善细节问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -717,6 +706,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-456">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -856,6 +848,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="119" column="12" lean-forward="false" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="127" column="66" lean-forward="false" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+        <state relative-caret-position="597">
+          <caret line="134" column="19" lean-forward="true" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
           <folding />
         </state>
       </provider>
