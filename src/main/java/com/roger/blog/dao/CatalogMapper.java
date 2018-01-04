@@ -21,4 +21,7 @@ public interface CatalogMapper {
     @Insert("INSERT INTO catalog(name,remark) VALUES(#{name},#{remark})")
     @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
     void addCatalog(Catalog catalog);
+
+    @Select("SELECT * FROM catalog")
+    List<Catalog> getAllCatalog();
 }

@@ -8,9 +8,10 @@ import java.util.Map;
  * Created by Administrator on 2017/12/15 0015.
  */
 public class AjaxJson {
+    private int code = 0;
     private boolean success = true;// 是否成功
     private String msg = "操作成功";// 提示信息
-    private Object obj = null;// 其他信息
+    private Object data = null;// 其他信息
     private Map<String, Object> attributes;// 其他参数
     public Map<String, Object> getAttributes() {
         return attributes;
@@ -28,12 +29,12 @@ public class AjaxJson {
         this.msg = msg;
     }
 
-    public Object getObj() {
-        return obj;
+    public Object getData() {
+        return data;
     }
 
-    public void setObj(Object obj) {
-        this.obj = obj;
+    public void setData(Object obj) {
+        this.data = obj;
     }
 
     public boolean isSuccess() {
@@ -47,8 +48,16 @@ public class AjaxJson {
         JSONObject obj = new JSONObject();
         obj.put("success", this.isSuccess());
         obj.put("msg", this.getMsg());
-        obj.put("obj", this.obj);
+        obj.put("data", this.getData());
         obj.put("attributes", this.attributes);
         return obj.toJSONString();
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
 }

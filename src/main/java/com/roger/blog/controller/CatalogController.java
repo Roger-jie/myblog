@@ -25,9 +25,9 @@ public class CatalogController {
     }
 
 
-    @RequestMapping("/adminCatalogList")
+    @RequestMapping("/adminCatalogListByLimit")
     @ResponseBody
-    public PageList adminCatalogList(Page page){
+    public PageList adminCatalogListByLimit(Page page){
         List<Catalog> catalogList = catalogMapper.getCatalogLimit(page);
         int count = catalogMapper.getCatalogCount();
         PageList pageList = new PageList(count,catalogList);
@@ -51,5 +51,11 @@ public class CatalogController {
             json.setSuccess(false);
         }
         return json;
+    }
+
+    @RequestMapping("/getAllCatalog")
+    @ResponseBody
+    public List<Catalog> getAllCatalog(){
+        return catalogMapper.getAllCatalog();
     }
 }

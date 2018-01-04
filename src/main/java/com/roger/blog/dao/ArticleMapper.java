@@ -33,8 +33,8 @@ public interface ArticleMapper {
      * 新增文章
      * @param article
      */
-     @Insert("insert into article (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md) values(#{title},"+
-             "#{describes},NOW(),#{content},#{is_show},0,#{category},0,#{keyword},#{md})")
+     @Insert("insert into article (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md,author,imgs) values(#{title},"+
+             "#{describes},NOW(),#{content},#{is_show},0,#{category},0,#{keyword},#{md},#{author},#{imgs})")
      @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
      void addArticle(Article article);
 

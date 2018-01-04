@@ -31,6 +31,10 @@ public class Article {
 
     private int is_show;
 
+    private int author;
+
+    private String imgs;
+
     public Article() {}
 
     public Article(int id, String title, String describes, String keyword, int click, String content, Date create_date, String comment_count, String category) {
@@ -131,5 +135,21 @@ public class Article {
 
     public void setIs_show(int is_show) {
         this.is_show = is_show;
+    }
+
+    public int getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(int author) {
+        this.author = author;
+    }
+
+    public String getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(String imgs) {
+        this.imgs = imgs;
     }
 }

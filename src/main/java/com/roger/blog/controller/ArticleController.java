@@ -1,9 +1,11 @@
 package com.roger.blog.controller;
 
+import com.roger.blog.config.WebSecurityConfig;
 import com.roger.blog.dao.ArticleMapper;
 import com.roger.blog.model.Article;
 import com.roger.blog.model.Page;
 import com.roger.blog.model.PageList;
+import com.roger.blog.model.User;
 import com.roger.blog.model.json.AjaxJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -51,9 +54,10 @@ public class ArticleController {
 
     @RequestMapping(value = "/adminAddArticle")
     @ResponseBody
-    public AjaxJson adminAddArticle(Article article, HttpServletRequest request){
+    public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article, HttpServletRequest request){
         AjaxJson json = new AjaxJson();
         try {
+            article.setAuthor(user.getId());
             articleMapper.addArticle(article);
             json.setSuccess(true);
             json.setMsg("文章保存成功");

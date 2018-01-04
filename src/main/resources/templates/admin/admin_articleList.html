@@ -36,17 +36,17 @@
             ,limits: [10, 20, 30, 40, 50] //分页记录数列表项，默认到90
             ,limit: 10   //默认每页多少条，默认60
             ,height: 380
-            ,width: 1200
+            ,width: 1150
             ,cols: [[
                  {checkbox: true}
-                ,{field: 'id', title: 'ID', width: 80}
+                ,{field: 'id', title: 'ID', width: 60}
                 ,{field: 'title', title: '标题', width: 250}
                 ,{field: 'category', title: '分类', width: 100}
                 ,{field: 'is_show', title: '是否显示', width: 120,templet: '#switchTpl'}
                 ,{field:'create_date',title: '创建时间', width:155, templet: '<div>{{ layui.laytpl.toDateString(d.create_date,"yyyy-MM-dd")}}</div>'}
                 ,{field:'comment_count',title: '评论数', width:80}
-                ,{field: 'click', title: '点击量', width: 100}
-                ,{fixed: 'right', width:255, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
+                ,{field: 'click', title: '点击量', width: 80}
+                ,{fixed: 'right', width:245, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
         });
         table.on('tool(article)', function(obj){
             var data = obj.data;
@@ -69,7 +69,11 @@
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
-                window.location.href = '/adminArticleUpdate?id='+data.id;
+                //var iframe = $('.layui-show',parent.document).src;
+                //console.info(iframe);
+                //iframe.src= '/adminArticleUpdate?id='+data.id;
+                //window.location.href = '/adminArticleUpdate?id='+data.id;
+                top.$('#S002').attr('src','/adminArticleUpdate?id='+data.id);
             }
         });
     });
