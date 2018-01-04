@@ -1,2 +1,2 @@
 # myblog
-个人博客
+Spring boot + layui 个人博客系统
