@@ -3,6 +3,7 @@ package com.roger.blog.dao;
 
 import com.roger.blog.model.Article;
 import com.roger.blog.model.Page;
+import com.roger.blog.provider.ArticleProvider;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -16,10 +17,11 @@ public interface ArticleMapper {
      * @param page 当前页数
      * @param limit 显示数
      */
-     @Select("SELECT a.id id,a.title title,a.describes describes,a.create_date create_date,a.is_show is_show ," +
-             "a.comment_count comment_count,c.name category,a.stick stick FROM article a LEFT JOIN catalog c ON a.category = c.id " +
-             " limit #{page},#{limit}")
-     List<Article> getArticleListByLimt(Page page);
+//     @Select("SELECT a.id id,a.title title,a.describes describes,a.create_date create_date,a.is_show is_show ," +
+//             "a.comment_count comment_count,c.name category,a.stick stick FROM article a LEFT JOIN catalog c ON a.category = c.id " +
+//             " limit #{page},#{limit}")
+     @SelectProvider(type = ArticleProvider.class,method = "findArticleByParamLimit")
+     List<Article> getArticleListByLimt(@Param("article") Article article,@Param("page") Page page);
 
     /**
      * 获取文章总数

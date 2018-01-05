@@ -13,13 +13,11 @@ public class UserProvider {
 
         public String findUserByParam(User user){
             SQL sql = new SQL().SELECT("*").FROM(USER_TABLE);
-            String loginName = user.getLogin_name();
-            if(StringUtil.isNotEmpty(loginName)){
-                sql.WHERE("login_name = #{login_name}");
+            if(StringUtil.isNotEmpty(user.getLogin_name())){
+                sql.WHERE("login_name = #{login_name} ");
             }
-            String name = user.getName();
-            if(StringUtil.isNotEmpty(name)){
-                sql.WHERE("name = #{name}");
+            if(StringUtil.isNotEmpty(user.getName())){
+                sql.WHERE("name = #{name} ");
             }
             return sql.toString();
         }

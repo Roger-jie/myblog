@@ -7,11 +7,21 @@
     <title>Title</title>
 </head>
 <body>
-<fieldset class="layui-elem-field" style="margin-top: 30px;">
-    <legend>评论列表</legend>
-    <div class="layui-btn-group demoTable" style="margin-left: 30px;margin-top:20px ">
-        <button class="layui-btn" data-type="saveCatalog">新增分类</button>
+<blockquote class="layui-elem-quote layui-text">
+    <div class="demoTable">
+        分类名称:
+        <div class="layui-inline">
+            <input class="layui-input" name="name" id="name" autocomplete="off">
+        </div>
+        <div class="layui-btn-group">
+            <button class="layui-btn" data-type="reload">搜索</button>
+            <button class="layui-btn" data-type="saveCatalog">新增</button>
+            <button class="layui-btn" data-type="refurbish">刷新</button>
+        </div>
     </div>
+</blockquote>
+<fieldset class="layui-elem-field" style="margin-top: 20px;">
+    <legend>评论列表</legend>
     <div class="layui-field-box layui-form">
         <table class="layui-table"  lay-filter="catalog" id="catalogTable">
 
@@ -87,6 +97,21 @@
                        }
                    });
                });
+           },
+           reload: function () {
+               //这里搜索
+               tableIns.reload({
+                   where: { //设定异步数据接口的额外参数，任意设
+                       'name': $('#name').val()
+                       //…
+                   }
+                   ,page: {
+                       curr: 1 //重新从第 1 页开始
+                   }
+               });
+           },
+           refurbish: function () {
+               tableIns.reload();
            }
        }
         $('.demoTable .layui-btn').on('click', function(){

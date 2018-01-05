@@ -27,8 +27,8 @@ public class CatalogController {
 
     @RequestMapping("/adminCatalogListByLimit")
     @ResponseBody
-    public PageList adminCatalogListByLimit(Page page){
-        List<Catalog> catalogList = catalogMapper.getCatalogLimit(page);
+    public PageList adminCatalogListByLimit(Catalog catalog,Page page){
+        List<Catalog> catalogList = catalogMapper.getCatalogLimit(catalog,page);
         int count = catalogMapper.getCatalogCount();
         PageList pageList = new PageList(count,catalogList);
         return pageList;

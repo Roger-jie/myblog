@@ -4,7 +4,26 @@
       layout:decorator="/main">
 
 <body>
-<fieldset class="layui-elem-field" style="margin-top: 30px;">
+<blockquote class="layui-elem-quote layui-text">
+    <div class="layui-form">
+            标题:
+            <div class="layui-inline">
+                <input class="layui-input" name="title" id="title" autocomplete="off">
+            </div>
+            分类信息:
+            <div class="layui-input-inline">
+                <select name="category"  lay-search="" id="category" autocomplete="off">
+                    <!--<option value="">直接选择或搜索选择</option>-->
+                    <!--<option value="1">java</option>-->
+                </select>
+            </div>
+            <div class="layui-btn-group">
+                <button class="layui-btn" data-type="reload">搜索</button>
+                <button class="layui-btn" data-type="refurbish">刷新</button>
+            </div>
+    </div>
+</blockquote>
+<fieldset class="layui-elem-field" style="margin-top: 20px;">
     <legend style="text-align:center;">文章列表</legend>
     <div class="layui-field-box layui-form">
         <table class="layui-table"  lay-filter="article" id="articleTable">
@@ -26,7 +45,16 @@
     <input type="checkbox" name="{{d.id}}" value="{{d.stick}}" title="置顶" lay-filter="stick" {{ (d.stick == 1) ? ('checked') : ('') }} />
 </script>
 <script>
-    layui.use('table', function(){
+    $(function () {
+        $.get('/getAllCatalog',function (_d) {
+            var _html = '<option value>直接选择或搜索选择</option>';
+            $.each(_d,function(i){
+                _html += '<option value="'+_d[i].id+'">'+_d[i].name+'</option>';
+            });
+            $('#category').html(_html);
+        });
+    });
+    layui.use(['table','form'], function(){
         var table = layui.table
         ,form = layui.form;
 
@@ -52,6 +80,8 @@
                 ,{field: 'stick', title: '置顶', width: 100,templet: '#checkboxTpl'}
                 ,{fixed: 'right', width:180, align:'center', toolbar: '#barDemo',title: '操作'}]] //设置表头
         });
+
+
         table.on('tool(article)', function(obj){
             var data = obj.data;
             if(obj.event === 'detail'){
@@ -79,13 +109,35 @@
 
         //监听性别操作
         form.on('switch(isShow)', function(obj){
-            console.info(this);
             layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
 
         //监听锁定操作
         form.on('checkbox(stick)', function(obj){
             layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+        });
+
+        var active = {
+            reload: function () {
+                //这里搜索
+                tableIns.reload({
+                    where: { //设定异步数据接口的额外参数，任意设
+                        'title': $('#title').val(),
+                        'category': $('#category').find("option:selected").val()
+                        //…
+                    }
+                    ,page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                });
+            },
+            refurbish: function () {
+                tableIns.reload();
+            }
+        }
+        $('.layui-form .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
         });
     });
 </script>

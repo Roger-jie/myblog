@@ -2,18 +2,17 @@ package com.roger.blog.dao;
 
 import com.roger.blog.model.Catalog;
 import com.roger.blog.model.Page;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import com.roger.blog.provider.CatalogProvider;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 @Mapper
 public interface CatalogMapper {
 
-    @Select("SELECT * FROM catalog limit #{page},#{limit}")
-    List<Catalog> getCatalogLimit(Page page);
+   // @Select("SELECT * FROM catalog limit #{page},#{limit}")
+    @SelectProvider(type = CatalogProvider.class,method = "findCatalogByParamLimit")
+    List<Catalog> getCatalogLimit(@Param("catalog") Catalog catalog,@Param("page") Page page);
 
     @Select("SELECT COUNT(id) FROM catalog ")
     int getCatalogCount();

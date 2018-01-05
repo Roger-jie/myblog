@@ -45,8 +45,8 @@ public class ArticleController {
 
     @RequestMapping(value = "/adminGetArticleList",method = RequestMethod.GET)
     @ResponseBody
-    public PageList getAdminArticleList(Page page){
-        List<Article> articleList = articleMapper.getArticleListByLimt(page);
+    public PageList getAdminArticleList(Article article,Page page){
+        List<Article> articleList = articleMapper.getArticleListByLimt(article,page);
         int count = articleMapper.getArticleCount();
         PageList pageList = new PageList(count,articleList);
         return pageList;
@@ -56,9 +56,13 @@ public class ArticleController {
     @ResponseBody
     public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article, HttpServletRequest request){
         AjaxJson json = new AjaxJson();
+        String[] tags = (String[])request.getParameterValues( "tag");
+        for (String a:tags) {
+            System.out.println(a);
+        }
         try {
             article.setAuthor(user.getId());
-            articleMapper.addArticle(article);
+          //  articleMapper.addArticle(article);
             json.setSuccess(true);
             json.setMsg("文章保存成功");
         } catch (Exception e) {
