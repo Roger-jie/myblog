@@ -1,6 +1,8 @@
 package com.roger.blog.model;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  *  文章表
@@ -36,6 +38,8 @@ public class Article {
     private String imgs;
 
     private int stick;
+
+    private List<Map<String,Object>> tag;
 
     public Article() {}
 
@@ -161,5 +165,13 @@ public class Article {
 
     public void setStick(int stick) {
         this.stick = stick;
+    }
+
+    public List<Map<String,Object>> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Map<String,Object>> tag) {
+        this.tag = tag;
     }
 }

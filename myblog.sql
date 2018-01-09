@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
-Source Server Version : 50717
+Source Server         : localhost
+Source Server Version : 50720
 Source Host           : localhost:3306
 Source Database       : myblog
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2017-12-20 18:20:08
+Date: 2018-01-09 14:48:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for article
+-- Table structure for `article`
 -- ----------------------------
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
@@ -29,6 +29,11 @@ CREATE TABLE `article` (
   `category` varchar(32) NOT NULL,
   `keyword` varchar(255) DEFAULT NULL COMMENT '关键字',
   `click` mediumint(255) DEFAULT NULL COMMENT '点击量',
+  `md` varchar(255) DEFAULT NULL COMMENT 'markdown',
+  `is_show` int(11) DEFAULT NULL,
+  `author` int(11) DEFAULT NULL,
+  `imgs` varchar(255) DEFAULT NULL,
+  `stick` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `date_index` (`create_date`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -36,10 +41,10 @@ CREATE TABLE `article` (
 -- ----------------------------
 -- Records of article
 -- ----------------------------
-INSERT INTO `article` VALUES ('1', '', '', '<p>dfsff2017-12-14 14:11:56 星期四2017-12-14 14:11:57 星期四</p>\n<blockquote>\n<ul>\n<li>**~~<em>2017-12-14 14:12:23 星期四2017-12-14 14:12:25 星期四\n[========]\n<em>~~</em></em></li>\n</ul>\n</blockquote>\n', '2017-12-14 14:12:34', '0', 'Java', null, null);
+INSERT INTO `article` VALUES ('1', '', '', '<p>dfsff2017-12-14 14:11:56 星期四2017-12-14 14:11:57 星期四</p>\n<blockquote>\n<ul>\n<li>**~~<em>2017-12-14 14:12:23 星期四2017-12-14 14:12:25 星期四\n[========]\n<em>~~</em></em></li>\n</ul>\n</blockquote>\n', '2017-12-14 14:12:34', '0', 'Java', null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for article_tag
+-- Table structure for `article_tag`
 -- ----------------------------
 DROP TABLE IF EXISTS `article_tag`;
 CREATE TABLE `article_tag` (
@@ -55,22 +60,24 @@ CREATE TABLE `article_tag` (
 INSERT INTO `article_tag` VALUES ('1', '1', '1');
 
 -- ----------------------------
--- Table structure for catalog
+-- Table structure for `catalog`
 -- ----------------------------
 DROP TABLE IF EXISTS `catalog`;
 CREATE TABLE `catalog` (
-  `id` int(11) NOT NULL COMMENT '主键id',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `name` varchar(255) DEFAULT NULL COMMENT '分类名称',
   `remark` varchar(255) DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of catalog
 -- ----------------------------
+INSERT INTO `catalog` VALUES ('1', 'java', null);
+INSERT INTO `catalog` VALUES ('2', '散文', '');
 
 -- ----------------------------
--- Table structure for comment
+-- Table structure for `comment`
 -- ----------------------------
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
@@ -91,7 +98,7 @@ CREATE TABLE `comment` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for tag
+-- Table structure for `tag`
 -- ----------------------------
 DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag` (
@@ -107,7 +114,7 @@ CREATE TABLE `tag` (
 INSERT INTO `tag` VALUES ('1', '自传', '1');
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (

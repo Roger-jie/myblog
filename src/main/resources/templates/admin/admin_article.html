@@ -83,7 +83,7 @@
             if(_d.success){
                 var _data = _d.data;
                 $.each(_data,function (i) {
-                    _html += '<input name="tag" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].id+'"/>'
+                    _html += '<input name="tag['+_data[i].id+']" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].id+'"/>'
                 });
             }
             $('#tag').html(_html);
@@ -96,7 +96,7 @@
             , laydate = layui.laydate
             ,upload = layui.upload;
 
-        // form.render();
+            form.render();
 
         var uploadInst = upload.render({
             elem: '#upload'
@@ -139,23 +139,26 @@
                 type: 'post',
                 url: '/adminAddArticle',
                 data: _data.field,
+                offset: 't',
                 dataType: "json",
                 success: function (data, status) {
                     layer.confirm('保存成功', {
-                        btn: ['返回列表','取消'] //按钮
-                    }, function(){
-                        window.location.href = '/adminArticleList';
+                        btn: ['确定'] //按钮
                     }, function(){
                         layer.close();
                     });
                 },
+               error:function () {
+                   layer.alert('保存失败');
+               }
             });
             return false;
         });
         $('#div_tag').blur(function () {
             var _val = $('#div_tag').val();
             if ('' != _val) {
-                $('#tag').append('<input name="tag" title="'+_val+'" type="checkbox" checked/>');
+                var _len = $('#tag').children().length;
+                $('#tag').append('<input name="tag['+_len+']" title="'+_val+'"  type="checkbox"  checked/>');
                 form.render();
             }
         });

@@ -56,14 +56,15 @@ public class ArticleController {
     @ResponseBody
     public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article, HttpServletRequest request){
         AjaxJson json = new AjaxJson();
-        String[] tags = (String[])request.getParameterValues( "tag");
+       /* String[] tags = (String[])request.getParameterValues( "tag");
         for (String a:tags) {
             System.out.println(a);
-        }
+        }*/
+       System.out.println(article.getTag());
         try {
             article.setAuthor(user.getId());
           //  articleMapper.addArticle(article);
-            json.setSuccess(true);
+              json.setSuccess(true);
             json.setMsg("文章保存成功");
         } catch (Exception e) {
             json.setSuccess(false);
