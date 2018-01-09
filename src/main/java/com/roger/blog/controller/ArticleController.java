@@ -2,10 +2,9 @@ package com.roger.blog.controller;
 
 import com.roger.blog.config.WebSecurityConfig;
 import com.roger.blog.dao.ArticleMapper;
-import com.roger.blog.model.Article;
-import com.roger.blog.model.Page;
-import com.roger.blog.model.PageList;
-import com.roger.blog.model.User;
+import com.roger.blog.dao.ArticleTagMapper;
+import com.roger.blog.dao.TagMapper;
+import com.roger.blog.model.*;
 import com.roger.blog.model.json.AjaxJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -17,14 +16,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ArticleController {
 
     @Autowired
     ArticleMapper articleMapper;
-
+    @Autowired
+    TagMapper tagMapper;
+    @Autowired
+    ArticleTagMapper articleTagMapper;
     /**
      * 文章发布页面
      * @return
@@ -56,21 +60,29 @@ public class ArticleController {
     @ResponseBody
     public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article, HttpServletRequest request){
         AjaxJson json = new AjaxJson();
-       /* String[] tags = (String[])request.getParameterValues( "tag");
-        for (String a:tags) {
-            System.out.println(a);
-        }*/
-       System.out.println(article.getTag());
+       // System.out.println(article.getTag());
         try {
             article.setAuthor(user.getId());
-          //  articleMapper.addArticle(article);
-              json.setSuccess(true);
+            articleMapper.addArticle(article);
+            saveArticleTag(article);
+            json.setSuccess(true);
             json.setMsg("文章保存成功");
         } catch (Exception e) {
             json.setSuccess(false);
             json.setMsg("文章保存失败");
         }
         return json;
+    }
+
+    private void saveArticleTag(Article article) {
+        List<String> formList = article.getTag();
+        List<Tag> tagList = tagMapper.getAllTag();
+        for (Tag tag : tagList) {
+            if (!formList.contains(tag.getName())) {
+                tagMapper.saveTag(tag);
+            }
+            articleTagMapper.saveArticleTag(article.getId(),tag.getId());
+        }
     }
 
     @RequestMapping(value = "/adminArticleUpdate")

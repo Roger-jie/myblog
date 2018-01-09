@@ -11,6 +11,8 @@ import java.util.List;
 @Mapper
 public interface ArticleMapper {
 
+    String ARTICLE_TABLE = "article";
+
     /**
      * 分页获取文章数据
      * @param article 文章
@@ -28,14 +30,14 @@ public interface ArticleMapper {
      * @param article 文章
      * @return
      */
-     @Select("SELECT COUNT(id) FROM article")
+     @Select("SELECT COUNT(id) FROM "+ARTICLE_TABLE)
      int getArticleCount();
 
     /**
      * 新增文章
      * @param article
      */
-     @Insert("insert into article (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md,author,imgs,stick) values(#{title},"+
+     @Insert("insert into "+ ARTICLE_TABLE +" (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md,author,imgs,stick) values(#{title},"+
              "#{describes},NOW(),#{content},#{is_show},0,#{category},0,#{keyword},#{md},#{author},#{imgs},#{stick})")
      @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
      void addArticle(Article article);
@@ -45,7 +47,7 @@ public interface ArticleMapper {
      * @param id
      * @return
      */
-     @Select("SELECT * FROM article WHERE id = #{id}")
+     @Select("SELECT * FROM "+ ARTICLE_TABLE +" WHERE id = #{id}")
      Article getArticleByID(@Param("id") String id);
 
     /**
@@ -53,10 +55,10 @@ public interface ArticleMapper {
      * @param article
      */
 
-     @Update("UPDATE article SET title = #{title} ,describes = #{describes},content = #{content} , is_show = #{is_show}," +
+     @Update("UPDATE "+ ARTICLE_TABLE +" SET title = #{title} ,describes = #{describes},content = #{content} , is_show = #{is_show}," +
              "category = #{category},keyword = #{keyword},md = #{md} where id = #{id}")
      void updateArticle(Article article);
 
-     @Delete("DELETE article WHERE id = #{id}")
+     @Delete("DELETE "+ ARTICLE_TABLE +" WHERE id = #{id}")
      void deleteArticle(@Param("id") String id);
 }

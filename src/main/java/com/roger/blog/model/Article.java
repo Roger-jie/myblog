@@ -39,7 +39,7 @@ public class Article {
 
     private int stick;
 
-    private List<Map<String,Object>> tag;
+    private List<String> tag;
 
     public Article() {}
 
@@ -167,11 +167,11 @@ public class Article {
         this.stick = stick;
     }
 
-    public List<Map<String,Object>> getTag() {
+    public List<String> getTag() {
         return tag;
     }
 
-    public void setTag(List<Map<String,Object>> tag) {
+    public void setTag(List<String> tag) {
         this.tag = tag;
     }
 }

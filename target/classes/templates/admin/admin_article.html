@@ -81,9 +81,10 @@
         $.get('/getAllTag',function (_d) {
             var _html = '';
             if(_d.success){
+                var _len = $('#tag').children().length;
                 var _data = _d.data;
                 $.each(_data,function (i) {
-                    _html += '<input name="tag['+_data[i].id+']" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].id+'"/>'
+                    _html += '<input name="tag['+_len+']" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].name+'"/>'
                 });
             }
             $('#tag').html(_html);
@@ -144,8 +145,9 @@
                 success: function (data, status) {
                     layer.confirm('保存成功', {
                         btn: ['确定'] //按钮
-                    }, function(){
-                        layer.close();
+                        ,offset: 't'
+                    }, function(index){
+                        layer.close(index);
                     });
                 },
                error:function () {
@@ -157,8 +159,9 @@
         $('#div_tag').blur(function () {
             var _val = $('#div_tag').val();
             if ('' != _val) {
-                var _len = $('#tag').children().length;
-                $('#tag').append('<input name="tag['+_len+']" title="'+_val+'"  type="checkbox"  checked/>');
+                var _len = $('#tag').children('input').length;
+                $('#tag').append('<input name="tag['+_len+']" title="'+_val+'"  type="checkbox" value="'+_val+'" checked/>');
+                $('#div_tag').val('');
                 form.render();
             }
         });
