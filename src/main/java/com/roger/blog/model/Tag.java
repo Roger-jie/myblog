@@ -11,15 +11,14 @@ public class Tag {
 
     private String name;
 
-    private String count;
 
     public Tag() {
     }
 
-    public Tag(int id, String name, String count) {
+    public Tag(int id, String name) {
         this.id = id;
         this.name = name;
-        this.count = count;
+
     }
 
     public int getId() {
@@ -38,11 +37,4 @@ public class Tag {
         this.name = name;
     }
 
-    public String getCount() {
-        return count;
-    }
-
-    public void setCount(String count) {
-        this.count = count;
-    }
 }

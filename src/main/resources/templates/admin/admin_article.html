@@ -140,10 +140,9 @@
                 type: 'post',
                 url: '/adminAddArticle',
                 data: _data.field,
-                offset: 't',
                 dataType: "json",
                 success: function (data, status) {
-                    layer.confirm('保存成功', {
+                    layer.confirm(data.msg, {
                         btn: ['确定'] //按钮
                         ,offset: 't'
                     }, function(index){

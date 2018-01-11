@@ -19,4 +19,9 @@ public interface TagMapper {
     @Insert("insert into "+TAG_TABLE+"(name) value(#{name})")
     @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
     void saveTag(Tag tag);
+
+    @Select("SELECT name FROM "+TAG_TABLE)
+    List<String> getALLTagName();
+
+
 }

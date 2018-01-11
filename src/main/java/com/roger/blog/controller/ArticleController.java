@@ -6,6 +6,8 @@ import com.roger.blog.dao.ArticleTagMapper;
 import com.roger.blog.dao.TagMapper;
 import com.roger.blog.model.*;
 import com.roger.blog.model.json.AjaxJson;
+import groovy.lang.Lazy;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +71,7 @@ public class ArticleController {
             json.setSuccess(true);
             json.setMsg("文章保存成功");
         } catch (Exception e) {
+            e.getMessage();
             json.setSuccess(false);
             json.setMsg("文章保存失败");
         }
@@ -77,18 +81,32 @@ public class ArticleController {
     private void saveArticleTag(Article article) {
         List<String> formList = article.getTag();
         List<Tag> tagList = tagMapper.getAllTag();
+        Map<String,Integer> tagMap = new HashMap<>();
+        //将已有的标签放在map里面
         for (Tag tag : tagList) {
-            if (!formList.contains(tag.getName())) {
+            tagMap.put(tag.getName(),tag.getId());
+        }
+        for (String tagName : formList) {
+            int id;
+            //是否已存在标签，没有就新增
+            if (!tagMap.containsKey(tagName)) {
+                Tag tag = new Tag();
+                tag.setName(tagName);
                 tagMapper.saveTag(tag);
+                id = tag.getId();
+            } else {
+                id = tagMap.get(tagName);
             }
-            articleTagMapper.saveArticleTag(article.getId(),tag.getId());
+            articleTagMapper.saveArticleTag(article.getId(),id);
         }
     }
 
     @RequestMapping(value = "/adminArticleUpdate")
     public String adminArticleUpdate(String id,Model model){
         Article article = articleMapper.getArticleByID(id);
+        List<String> tagNameList = articleTagMapper.getTagNameByArticleId(id);
         model.addAttribute("article", article);
+        model.addAttribute("tagNameList",tagNameList);
         return "admin/admin_articleUpdate";
     }
 
@@ -98,6 +116,9 @@ public class ArticleController {
         AjaxJson ajaxJson = new AjaxJson();
         try {
             articleMapper.updateArticle(article);
+            //先删除关系
+            articleTagMapper.deleteArticleTag(article.getId());
+            saveArticleTag(article);
             ajaxJson.setSuccess(true);
             ajaxJson.setMsg("文章修改成功");
         } catch (Exception e) {

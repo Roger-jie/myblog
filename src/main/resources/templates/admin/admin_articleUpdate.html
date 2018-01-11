@@ -49,6 +49,11 @@
              </div>
          </div>-->
         <div class="layui-form-item">
+            <label class="layui-form-label">标签</label>
+            <div class="layui-input-block" id="tag"></div>
+            <input class="layui-input" type="text" placeholder="自定义标签" autocomplete="off" id="div_tag" style="width: 100px">
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">是否显示</label>
             <div class="layui-input-block">
                 <input type="radio" name="is_show" value="0" title="是">
@@ -90,7 +95,23 @@
                 _html += '<option value="'+_d[i].id+'">'+_d[i].name+'</option>';
             });
             $('#category').html(_html);
-        })
+        });
+        $.get('/getAllTag',function (_d) {
+            var _html = '';
+            if(_d.success){
+                var _len = $('#tag').children().length;
+                var _data = _d.data;
+                var _tagName = [[${tagNameList}]];
+                $.each(_data,function (i) {
+                    if ($.inArray(_data[i].name, _tagName) > -1) {
+                        _html += '<input name="tag['+_len+']" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].name+'" checked/>'
+                    } else {
+                        _html += '<input name="tag['+_len+']" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].name+'"/>'
+                    }
+                });
+            }
+            $('#tag').html(_html);
+        });
     });
     layui.use(['form', 'layedit', 'laydate'], function() {
         var form = layui.form
@@ -116,6 +137,7 @@
                 success: function (data, status) {
                     layer.confirm('保存成功', {
                         btn: ['返回列表','取消'] //按钮
+                        ,offset: 't'
                     }, function(){
                         window.location.href = '/adminArticleList';
                     }, function(){
@@ -144,6 +166,16 @@
         $('.layui-btn-primary').on('click', function(){
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
+        });
+
+        $('#div_tag').blur(function () {
+            var _val = $('#div_tag').val();
+            if ('' != _val) {
+                var _len = $('#tag').children('input').length;
+                $('#tag').append('<input name="tag['+_len+']" title="'+_val+'"  type="checkbox" value="'+_val+'" checked/>');
+                $('#div_tag').val('');
+                form.render();
+            }
         });
     });
 </script>

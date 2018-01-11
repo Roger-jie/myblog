@@ -73,12 +73,18 @@
           <artifactId>mybatis-spring-boot-starter</artifactId>
           <version>1.1.1</version>
       </dependency>
-          <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>3.8.1</version>
-                <scope>test</scope>
-          </dependency>
+      <!-- Druid数据库连接池组件 -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+          <version>1.0.18</version>
+      </dependency>
+      <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+      </dependency>
 
       <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
       <dependency>

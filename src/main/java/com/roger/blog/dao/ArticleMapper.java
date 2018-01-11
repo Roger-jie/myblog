@@ -5,6 +5,9 @@ import com.roger.blog.model.Article;
 import com.roger.blog.model.Page;
 import com.roger.blog.provider.ArticleProvider;
 import org.apache.ibatis.annotations.*;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -40,6 +43,7 @@ public interface ArticleMapper {
      @Insert("insert into "+ ARTICLE_TABLE +" (title , describes, create_date ,content,is_show ,comment_count ,category ,click,keyword ,md,author,imgs,stick) values(#{title},"+
              "#{describes},NOW(),#{content},#{is_show},0,#{category},0,#{keyword},#{md},#{author},#{imgs},#{stick})")
      @Options(useGeneratedKeys=true, keyProperty="id",keyColumn = "id")
+     @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Exception.class)
      void addArticle(Article article);
 
     /**
@@ -57,8 +61,10 @@ public interface ArticleMapper {
 
      @Update("UPDATE "+ ARTICLE_TABLE +" SET title = #{title} ,describes = #{describes},content = #{content} , is_show = #{is_show}," +
              "category = #{category},keyword = #{keyword},md = #{md} where id = #{id}")
+     @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Exception.class)
      void updateArticle(Article article);
 
      @Delete("DELETE "+ ARTICLE_TABLE +" WHERE id = #{id}")
+     @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Exception.class)
      void deleteArticle(@Param("id") String id);
 }
