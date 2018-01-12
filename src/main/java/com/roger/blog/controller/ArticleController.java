@@ -6,10 +6,9 @@ import com.roger.blog.dao.ArticleTagMapper;
 import com.roger.blog.dao.TagMapper;
 import com.roger.blog.model.*;
 import com.roger.blog.model.json.AjaxJson;
-import groovy.lang.Lazy;
-import org.apache.ibatis.annotations.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +29,9 @@ public class ArticleController {
     TagMapper tagMapper;
     @Autowired
     ArticleTagMapper articleTagMapper;
+
+    //private Logger log =
+    private final static Logger logger = LoggerFactory.getLogger(ArticleController.class);
     /**
      * 文章发布页面
      * @return
@@ -43,7 +43,6 @@ public class ArticleController {
 
     /**
      * 文章列表页面
-     * @return
      */
     @RequestMapping("/adminArticleList")
     public String adminArticleList(){
@@ -61,7 +60,7 @@ public class ArticleController {
 
     @RequestMapping(value = "/adminAddArticle")
     @ResponseBody
-    public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article, HttpServletRequest request){
+    public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article){
         AjaxJson json = new AjaxJson();
        // System.out.println(article.getTag());
         try {
@@ -70,6 +69,7 @@ public class ArticleController {
             saveArticleTag(article);
             json.setSuccess(true);
             json.setMsg("文章保存成功");
+            logger.info("保存文章成功");
         } catch (Exception e) {
             e.getMessage();
             json.setSuccess(false);
@@ -112,7 +112,7 @@ public class ArticleController {
 
     @RequestMapping(value = "/adminUpdateArticle")
     @ResponseBody
-    public AjaxJson adminUpdateArticle(Article article,HttpServletRequest request){
+    public AjaxJson adminUpdateArticle(Article article){
         AjaxJson ajaxJson = new AjaxJson();
         try {
             articleMapper.updateArticle(article);

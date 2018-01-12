@@ -1,8 +1,5 @@
 package com.roger.blog.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.roger.blog.config.WebSecurityConfig;
 import com.roger.blog.dao.UserMapper;
 import com.roger.blog.model.User;
 import com.roger.blog.model.json.AjaxJson;
@@ -13,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author  roger
