@@ -1,17 +1,17 @@
 package com.roger.blog.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  *  文章表
  * @author  Roger
  *  2017.12.14
  */
-public class Article {
+public class Article implements Serializable{
 
-    private int  id;
+    private Integer  id;
     //标题
     private String title;
     //描述
@@ -19,7 +19,7 @@ public class Article {
     //关键字
     private String keyword;
     //点击量
-    private int click;
+    private Integer click;
     //内容
     private String content;
     //创建时间
@@ -31,19 +31,19 @@ public class Article {
     //MD值
     private String md;
 
-    private int is_show;
+    private Integer is_show;
 
-    private int author;
+    private Integer author;
 
     private String imgs;
 
-    private int stick;
+    private Integer stick;
 
     private List<String> tag;
 
     public Article() {}
 
-    public Article(int id, String title, String describes, String keyword, int click, String content, Date create_date, String comment_count, String category) {
+    public Article(Integer id, String title, String describes, String keyword, Integer click, String content, Date create_date, String comment_count, String category, String md, Integer is_show, Integer author, String imgs, Integer stick, List<String> tag) {
         this.id = id;
         this.title = title;
         this.describes = describes;
@@ -53,13 +53,19 @@ public class Article {
         this.create_date = create_date;
         this.comment_count = comment_count;
         this.category = category;
+        this.md = md;
+        this.is_show = is_show;
+        this.author = author;
+        this.imgs = imgs;
+        this.stick = stick;
+        this.tag = tag;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -77,6 +83,22 @@ public class Article {
 
     public void setDescribes(String describes) {
         this.describes = describes;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public Integer getClick() {
+        return click;
+    }
+
+    public void setClick(Integer click) {
+        this.click = click;
     }
 
     public String getContent() {
@@ -111,22 +133,6 @@ public class Article {
         this.category = category;
     }
 
-    public String getKeyword() {
-        return keyword;
-    }
-
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
-
-    public int getClick() {
-        return click;
-    }
-
-    public void setClick(int click) {
-        this.click = click;
-    }
-
     public String getMd() {
         return md;
     }
@@ -135,19 +141,19 @@ public class Article {
         this.md = md;
     }
 
-    public int getIs_show() {
+    public Integer getIs_show() {
         return is_show;
     }
 
-    public void setIs_show(int is_show) {
+    public void setIs_show(Integer is_show) {
         this.is_show = is_show;
     }
 
-    public int getAuthor() {
+    public Integer getAuthor() {
         return author;
     }
 
-    public void setAuthor(int author) {
+    public void setAuthor(Integer author) {
         this.author = author;
     }
 
@@ -159,11 +165,11 @@ public class Article {
         this.imgs = imgs;
     }
 
-    public int getStick() {
+    public Integer getStick() {
         return stick;
     }
 
-    public void setStick(int stick) {
+    public void setStick(Integer stick) {
         this.stick = stick;
     }
 
@@ -174,4 +180,26 @@ public class Article {
     public void setTag(List<String> tag) {
         this.tag = tag;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", describes='" + describes + '\'' +
+                ", keyword='" + keyword + '\'' +
+                ", click=" + click +
+                ", content='" + content + '\'' +
+                ", create_date=" + create_date +
+                ", comment_count='" + comment_count + '\'' +
+                ", category='" + category + '\'' +
+                ", md='" + md + '\'' +
+                ", is_show=" + is_show +
+                ", author=" + author +
+                ", imgs='" + imgs + '\'' +
+                ", stick=" + stick +
+                ", tag=" + tag +
+                '}';
+    }
+
 }

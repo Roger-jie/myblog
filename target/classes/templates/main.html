@@ -2,11 +2,14 @@
 
     <link rel="stylesheet" th:href="@{../layer/css/layui.css}"/>
     <link rel="stylesheet" th:href="@{../editormd/css/editormd.css}"/>
+    <link rel="stylesheet" th:href="@{../tagsinput/jquery.tagsinput.css}">
+    <link rel="stylesheet" th:href="@{../jqueryui/jquery-ui.css.css}">
     <script th:src="@{../jquery-1.9.1.min.js}"></script>
+    <script th:src="@{../tagsinput/jquery.tagsinput.js}"></script>
+    <script th:src="@{../jqueryui/jquery-ui.min.js}"></script>
     <script th:src="@{../layer/layui.js}"></script>
     <script th:src="@{../editormd/editormd.js}"></script>
-
-<script>
+    <script>
     layui.use(['laytpl','util'], function() {
         var laytpl = layui.laytpl
             ,util = layui.util;
