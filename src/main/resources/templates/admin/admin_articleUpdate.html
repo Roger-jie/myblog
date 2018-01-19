@@ -50,8 +50,9 @@
          </div>-->
         <div class="layui-form-item">
             <label class="layui-form-label">标签</label>
-            <div class="layui-input-block" id="tag"></div>
-            <input class="layui-input" type="text" placeholder="自定义标签" autocomplete="off" id="div_tag" style="width: 100px">
+            <div class="layui-input-block">
+                <input class="tags" type="text" placeholder="自定义标签" autocomplete="off" id="tags" name="tags" style="width: 100px" data-role="tagsinput" >
+            </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">是否显示</label>
@@ -96,8 +97,9 @@
             });
             $('#category').html(_html);
         });
-        $.get('/getAllTag',function (_d) {
-            var _html = '';
+        $('#tags').val([[${tagNameList}]]);
+        //$.get('/getAllTag',function (_d) {
+           /* var _html = '';
             if(_d.success){
                 var _len = $('#tag').children().length;
                 var _data = _d.data;
@@ -109,8 +111,22 @@
                         _html += '<input name="tag['+_len+']" title="'+_data[i].name+'" type="checkbox" value="'+_data[i].name+'"/>'
                     }
                 });
-            }
-            $('#tag').html(_html);
+            }*/
+      //  });
+        $('#tags').tagsInput({
+            //'autocomplete_url': '/getAutocompleteTag', //自动完成插件的文件地址，demo里有说明
+            //'autocomplete': 'http://bassistance.de/jquery-plugins/jquery-plugin-autocomplete', //自动完成插件的参数，demo有说明。（提供个jquery.autocomplete的：http://bassistance.de/jquery-plugins/jquery-plugin-autocomplete/）
+            'height':'60px', //设置高度
+            'width':'1000px',  //设置宽度
+            'interactive':true, //是否允许添加标签，false为阻止
+            'defaultText':'add a tag', //默认文字
+            //'onAddTag':callback_function, //增加标签的回调函数
+            //'onRemoveTag':callback_function, //删除标签的回调函数
+            //'onChange' : callback_function, //改变一个标签时的回调函数
+            'removeWithBackspace' : true, //是否允许使用退格键删除前面的标签，false为阻止
+            'minChars' : 0, //每个标签的小最字符
+            'maxChars' : 0, //每个标签的最大字符，如果不设置或者为0，就是无限大
+            'placeholderColor' : '#666666' //设置defaultText的颜色
         });
     });
     layui.use(['form', 'layedit', 'laydate'], function() {

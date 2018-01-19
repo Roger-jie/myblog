@@ -1,11 +1,89 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/main">
 <head>
     <meta charset="UTF-8" />
     <title>LoveYuan's Blog</title>
-    <link th:href="@{../css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{../css/bootstrap-theme.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{../css/index.css}">
 </head>
 <body>
-<h1><p th:text="'你好'" ></p></h1>
+<nav class="blog-nav layui-header">
+    <div class="blog-container">
+        <!-- QQ互联登陆 -->
+        <!--<a href="/QQUserLogin" class="blog-user ">
+            <i class="fa fa-qq"></i>
+        </a>-->
+        <!--<a href="/loginOut" class="blog-user  layui-hide ">
+            <img src="" alt="" title="">
+        </a>-->
+        <a class="blog-logo" href="" style="color: #cbcdd0"><i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">&#xe609;</i> LoveYuan's Blog</a>
+        <!-- 导航菜单 -->
+        <ul class="layui-nav" lay-filter="nav">
+            <li class="layui-nav-item  layui-this">
+                <a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/timeline "><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+            </li>
+            <span class="layui-nav-bar" style="width: 0px; left: 324.85px; opacity: 0; top: 59px;"></span></ul>
+        <!-- 手机和平板的导航开关 -->
+        <!--<a class="blog-navicon" href="javascript:;">
+            <i class="fa fa-navicon"></i>
+        </a>-->
+    </div>
+</nav>
+<div class="blog-container">
+    <div class="blog-main">
+        <div class="blog-main-left">
+            <div class="article shadow">
+                <div class="artilce-left" style="width: 25%;float: left">
+                    猿强，则国强。国强，则猿更强！
+                </div>
+                <div class="artilce-right" style="width: 70%;float: right">
+                    猿强，则国强。国强，则猿更强！——孟子（好囖。。其实这特喵的是我说的）
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+<style>
+    .blog-main {
+        margin-top: 15px;
+        width: 100%;
+        position: relative;
+        min-height: 100vh;
+    }
+    .blog-container{
+        margin: 0 auto;
+        position: relative;
+        width: 1170px;
+    }
+    .blog-main .blog-main-left{
+        width: 60%;
+        float: left;
+    }
+    .article {
+        padding: 15px;
+        margin-bottom: 10px;
+        background: #fff;
+        border-left: 5px solid #fff;
+        -moz-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+    .shadow {
+        box-shadow: 0 2px 10px 0 rgba(2, 0, 0, 0.1);
+    }
+</style>

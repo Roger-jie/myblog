@@ -1,0 +1,39 @@
+.blog-nav {
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    top: 0;
+    background-color: #373D49;
+    border-bottom: 1px solid #5FB878;
+}
+.logo{
+    position: absolute;
+}
+.layui-nav {
+    display: block;
+}
+.blog-nav .blog-logo {
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 64px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: KaiTi;
+    display: inline-block;
+    z-index: 10;
+}
+.blog-nav .layui-nav{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 85%;
+    background: none;
+    text-align: center;
+}
+.blog-container {
+    margin: 0 auto;
+    position: relative;
+}

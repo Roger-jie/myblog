@@ -39,11 +39,11 @@ public class Article implements Serializable{
 
     private Integer stick;
 
-    private List<String> tag;
+    private String tags;
 
     public Article() {}
 
-    public Article(Integer id, String title, String describes, String keyword, Integer click, String content, Date create_date, String comment_count, String category, String md, Integer is_show, Integer author, String imgs, Integer stick, List<String> tag) {
+    public Article(Integer id, String title, String describes, String keyword, Integer click, String content, Date create_date, String comment_count, String category, String md, Integer is_show, Integer author, String imgs, Integer stick, String tags) {
         this.id = id;
         this.title = title;
         this.describes = describes;
@@ -58,7 +58,7 @@ public class Article implements Serializable{
         this.author = author;
         this.imgs = imgs;
         this.stick = stick;
-        this.tag = tag;
+        this.tags = tags;
     }
 
     public Integer getId() {
@@ -173,12 +173,12 @@ public class Article implements Serializable{
         this.stick = stick;
     }
 
-    public List<String> getTag() {
-        return tag;
+    public String getTags() {
+        return tags;
     }
 
-    public void setTag(List<String> tag) {
-        this.tag = tag;
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -198,7 +198,7 @@ public class Article implements Serializable{
                 ", author=" + author +
                 ", imgs='" + imgs + '\'' +
                 ", stick=" + stick +
-                ", tag=" + tag +
+                ", tag=" + tags +
                 '}';
     }
 

@@ -6,6 +6,7 @@ import com.roger.blog.dao.ArticleTagMapper;
 import com.roger.blog.dao.TagMapper;
 import com.roger.blog.model.*;
 import com.roger.blog.model.json.AjaxJson;
+import com.roger.blog.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class ArticleController {
     @Autowired
     ArticleTagMapper articleTagMapper;
 
-    //private Logger log =
     private final static Logger logger = LoggerFactory.getLogger(ArticleController.class);
+
     /**
      * 文章发布页面
      * @return
@@ -62,7 +63,6 @@ public class ArticleController {
     @ResponseBody
     public AjaxJson adminAddArticle(@SessionAttribute(WebSecurityConfig.SESSION_KEY) User user,Article article){
         AjaxJson json = new AjaxJson();
-       // System.out.println(article.getTag());
         try {
             article.setAuthor(user.getId());
             articleMapper.addArticle(article);
@@ -79,14 +79,17 @@ public class ArticleController {
     }
 
     private void saveArticleTag(Article article) {
-        List<String> formList = article.getTag();
+        String tags = article.getTags();
+        if (StringUtil.isEmpty(tags)){
+            return;
+        }
         List<Tag> tagList = tagMapper.getAllTag();
         Map<String,Integer> tagMap = new HashMap<>();
         //将已有的标签放在map里面
         for (Tag tag : tagList) {
             tagMap.put(tag.getName(),tag.getId());
         }
-        for (String tagName : formList) {
+        for (String tagName : tags.split(",")) {
             int id;
             //是否已存在标签，没有就新增
             if (!tagMap.containsKey(tagName)) {
