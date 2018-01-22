@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aead90f0-9a9e-43fe-8d5b-44257c745203" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/roger/blog/model/Article.class" afterPath="$PROJECT_DIR$/target/classes/com/roger/blog/model/Article.class" />
+    <list default="true" id="aead90f0-9a9e-43fe-8d5b-44257c745203" name="Default" comment="index首页">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/iconfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/iconfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/iconfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/1.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/2.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ad.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/datepng.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/fly.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/head.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/lanmbq.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/newsbg01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/newsbg02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/newsbg03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/newsbg04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ph2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/global.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/iconfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/article.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/article_details.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/article_pub.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/freezeheader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/html5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/set.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/sliders.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/TagController.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/TagController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/roger/blog/model/Article.java" afterPath="$PROJECT_DIR$/src/main/java/com/roger/blog/model/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/admin/admin_article.html" afterPath="$PROJECT_DIR$/target/classes/templates/admin/admin_article.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/main.html" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" />
     </list>
@@ -68,22 +96,33 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+            <state relative-caret-position="207">
+              <caret line="54" column="94" lean-forward="true" selection-start-line="54" selection-start-column="94" selection-end-line="54" selection-end-column="94" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/index/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-69">
+              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DruidConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/config/DruidConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -93,7 +132,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+              <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -102,8 +151,8 @@
       <file leaf-file-name="admin_index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="13" column="14" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="13" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1515484391826" expanded="true" signature="4493:4540" ph="..." />
@@ -125,7 +174,7 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="322">
               <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding />
             </state>
@@ -142,33 +191,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_article.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="36" column="3" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="41" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1516328825693" expanded="true" signature="5408:5423" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="111" column="39" lean-forward="false" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin_articleUpdate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="1104">
               <caret line="48" column="19" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -209,7 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/my.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/1.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/roger/blog/model/PageList.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.fxml" />
@@ -253,12 +278,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/UploadController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/TagController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/main.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/roger/blog/model/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/index.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/global.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/main.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       </list>
     </option>
@@ -318,6 +344,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -433,127 +461,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="article" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -609,14 +517,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -624,7 +530,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="F:/My-Blog-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -637,16 +543,16 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\myblog\src\main\resources\static\images" />
+      <recent name="F:\myblog\src\main\resources\static\js" />
+      <recent name="F:\myblog\src\main\resources\static\css" />
+      <recent name="F:\myblog\src\main\resources\static\bootstrap-tagsinput" />
+      <recent name="F:\myblog\src\main\resources\static\amazeui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\myblog\src\main\resources\static\jquery.tagsinput" />
       <recent name="F:\myblog" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\myblog\src\main\resources\static\bootstrap-tagsinput" />
-      <recent name="F:\myblog\src\main\resources\static\amazeui" />
-      <recent name="F:\myblog\src\main\resources\static\jqueryui" />
-      <recent name="F:\myblog\src\main\resources\static" />
-      <recent name="F:\myblog\src\main\resources\static\jquery\tagsinput" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1121,7 +1027,8 @@
       <workItem from="1516086575472" duration="5917000" />
       <workItem from="1516154959621" duration="11367000" />
       <workItem from="1516242303442" duration="10211000" />
-      <workItem from="1516328166688" duration="13034000" />
+      <workItem from="1516328166688" duration="13095000" />
+      <workItem from="1516590360882" duration="8382000" />
     </task>
     <task id="LOCAL-00001" summary="登录后台页面">
       <created>1513939944539</created>
@@ -1263,11 +1170,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516096923331</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="index首页">
+      <created>1516354375629</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1516354375629</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263647000" />
+    <option name="totallyTimeSpent" value="272090000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1280,11 +1194,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29166666" sideWeight="0.51432663" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29166666" sideWeight="0.517192" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29166666" sideWeight="0.517192" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1301,11 +1216,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29166666" sideWeight="0.48567334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29166666" sideWeight="0.48280802" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27507162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19126074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1376,7 +1291,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/roger/blog/config/DruidConfig.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1385,115 +1308,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback-spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="112" column="24" lean-forward="false" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MAVEN/com.roger:myblog:1.0-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>com.roger:myblog:1.0-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="" y="">com.roger:myblog:1.0-SNAPSHOT</node>
-            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot:jar:1.4.0.RELEASE/org.springframework:spring-core:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot:jar:1.4.0.RELEASE/org.springframework:spring-context:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.0.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.0.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7/ch.qos.logback:logback-core:jar:1.1.7</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.0.RELEASE/org.slf4j:jcl-over-slf4j:jar:1.7.21</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.0.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.21</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.0.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.21</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.0.RELEASE/org.yaml:snakeyaml:jar:1.17</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/commons-beanutils:commons-beanutils:jar:1.9.2</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/commons-collections:commons-collections:jar:3.2.2</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/commons-digester:commons-digester:jar:2.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity:jar:1.7</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity:jar:1.7/commons-lang:commons-lang:jar:2.4</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/commons-chain:commons-chain:jar:1.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/commons-validator:commons-validator:jar:1.3.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/dom4j:dom4j:jar:1.6.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/oro:oro:jar:2.0.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/sslext:sslext:jar:1.2-0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/org.apache.struts:struts-core:jar:1.3.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/org.apache.struts:struts-core:jar:1.3.8/antlr:antlr:jar:2.7.7</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/org.apache.struts:struts-taglib:jar:1.3.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.apache.velocity:velocity-tools:jar:2.0/org.apache.struts:struts-tiles:jar:1.3.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework:spring-context-support:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-velocity:jar:1.4.0.RELEASE/org.springframework:spring-context-support:jar:4.3.2.RELEASE/org.springframework:spring-beans:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.0.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.4</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.0.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.4</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.0.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.4</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final/javax.validation:validation-api:jar:1.1.0.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final/org.jboss.logging:jboss-logging:jar:3.3.0.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final/com.fasterxml:classmate:jar:1.3.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.1/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.1/com.fasterxml.jackson.core:jackson-core:jar:2.8.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework:spring-web:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework:spring-web:jar:4.3.2.RELEASE/org.springframework:spring-aop:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework:spring-webmvc:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.4.0.RELEASE/org.springframework:spring-webmvc:jar:4.3.2.RELEASE/org.springframework:spring-expression:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf:jar:2.1.5.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf:jar:2.1.5.RELEASE/ognl:ognl:jar:3.0.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf:jar:2.1.5.RELEASE/org.javassist:javassist:jar:3.20.0-GA</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf:jar:2.1.5.RELEASE/org.unbescape:unbescape:jar:1.1.0.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE/org.slf4j:slf4j-api:jar:1.7.21</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:jar:1.4.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.0.RELEASE/nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:jar:1.4.0/org.codehaus.groovy:groovy:jar:2.4.7</node>
-            <node x="" y="">net.sourceforge.nekohtml:nekohtml:jar:1.9.22</node>
-            <node x="" y="">net.sourceforge.nekohtml:nekohtml:jar:1.9.22/xerces:xercesImpl:jar:2.11.0</node>
-            <node x="" y="">net.sourceforge.nekohtml:nekohtml:jar:1.9.22/xerces:xercesImpl:jar:2.11.0/xml-apis:xml-apis:jar:1.4.01</node>
-            <node x="" y="">com.alibaba:fastjson:jar:1.2.6</node>
-            <node x="" y="">mysql:mysql-connector-java:jar:5.1.39</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.springframework.boot:spring-boot-starter-jdbc:jar:1.4.0.RELEASE</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.springframework.boot:spring-boot-starter-jdbc:jar:1.4.0.RELEASE/org.apache.tomcat:tomcat-jdbc:jar:8.5.4</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.springframework.boot:spring-boot-starter-jdbc:jar:1.4.0.RELEASE/org.apache.tomcat:tomcat-jdbc:jar:8.5.4/org.apache.tomcat:tomcat-juli:jar:8.5.4</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.springframework.boot:spring-boot-starter-jdbc:jar:1.4.0.RELEASE/org.springframework:spring-jdbc:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.springframework.boot:spring-boot-starter-jdbc:jar:1.4.0.RELEASE/org.springframework:spring-jdbc:jar:4.3.2.RELEASE/org.springframework:spring-tx:jar:4.3.2.RELEASE</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:jar:1.2.0</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.mybatis:mybatis:jar:3.4.2</node>
-            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0/org.mybatis:mybatis-spring:jar:1.3.1</node>
-            <node x="" y="">com.alibaba:druid:jar:1.0.18</node>
-            <node x="" y="">com.alibaba:druid:jar:1.0.18/com.alibaba:jconsole:jar:1.8.0</node>
-            <node x="" y="">com.alibaba:druid:jar:1.0.18/com.alibaba:tools:jar:1.8.0</node>
-            <node x="" y="">junit:junit:jar:3.8.1</node>
-            <node x="" y="">commons-io:commons-io:jar:2.5</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.5393509127789047" x="490.0" y="409.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/config/DruidStatViewServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1606,9 +1420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3335">
           <caret line="168" column="17" lean-forward="false" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#7584#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1634,7 +1445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3657">
           <caret line="173" column="26" lean-forward="false" selection-start-line="173" selection-start-column="26" selection-end-line="173" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1659,21 +1469,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/config/DruidConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/controller/TagController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1681,28 +1480,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
           <caret line="175" column="29" lean-forward="false" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
-          <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3588#3589#0" expanded="true" />
-            <element signature="e#3620#3621#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/controller/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="2024">
           <caret line="111" column="39" lean-forward="false" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1245#1246#0" expanded="false" />
+            <element signature="e#1289#1290#0" expanded="false" />
+            <element signature="e#1399#1400#0" expanded="false" />
+            <element signature="e#1447#1448#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_article.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="828">
           <caret line="36" column="3" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="41" selection-end-column="11" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <marker date="1516328825693" expanded="true" signature="5408:5423" ph="..." />
           </folding>
         </state>
@@ -1710,7 +1510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_articleUpdate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="1104">
           <caret line="48" column="19" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1736,7 +1536,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="322">
           <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding />
         </state>
@@ -1746,22 +1546,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/index/set.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/admin_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1515484391826" expanded="true" signature="4493:4540" ph="..." />
@@ -1769,22 +1576,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="81" column="37" lean-forward="true" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/roger/blog/config/DruidConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+        <state relative-caret-position="207">
+          <caret line="54" column="94" lean-forward="true" selection-start-line="54" selection-start-column="94" selection-end-line="54" selection-end-column="94" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

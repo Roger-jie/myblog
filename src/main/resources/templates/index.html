@@ -4,53 +4,290 @@
 <head>
     <meta charset="UTF-8" />
     <title>LoveYuan's Blog</title>
-    <link rel="stylesheet" th:href="@{../css/index.css}">
 </head>
 <body>
-<nav class="blog-nav layui-header">
-    <div class="blog-container">
-        <!-- QQ互联登陆 -->
-        <!--<a href="/QQUserLogin" class="blog-user ">
-            <i class="fa fa-qq"></i>
-        </a>-->
-        <!--<a href="/loginOut" class="blog-user  layui-hide ">
-            <img src="" alt="" title="">
-        </a>-->
-        <a class="blog-logo" href="" style="color: #cbcdd0"><i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">&#xe609;</i> LoveYuan's Blog</a>
-        <!-- 导航菜单 -->
-        <ul class="layui-nav" lay-filter="nav">
-            <li class="layui-nav-item  layui-this">
-                <a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+<div class="layui-header header">
+    <div class="main">
+        <div class="layui-logo">
+            <a class="logo1" href="#" style="color: #cbcdd0;position: absolute"><i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">&#xe609;</i> LoveYuan's Blog</a>
+            <ul class="layui-nav layui-nav-left" lay-filter="filter">
+                <li class="layui-nav-item layui-this nav-left">
+                    <a href="/">首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="article.html">文章</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="time_line.html">时间轴</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="time_line.html">相册</a>
+                </li>
+            </ul>
+        </div>
+        <!--<ul class="layui-nav layui-layout-right layui-nav-right" lay-filter="filter">
+
+            <li class="layui-nav-item">
+                <a href="home.html">我的主页<span class="layui-badge-dot"></span></a>
             </li>
             <li class="layui-nav-item">
-                <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+                <a href="javascript:;"><img src="../static/images/head.jpg" class="layui-nav-img">我</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="article_pub.html">文章发布</a></dd>
+                    <dd><a href="set.html">修改信息</a></dd>
+                    <dd><a href="javascript:;">退了</a></dd>
+                </dl>
             </li>
-            <li class="layui-nav-item">
-                <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="/timeline "><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
-            </li>
-            <span class="layui-nav-bar" style="width: 0px; left: 324.85px; opacity: 0; top: 59px;"></span></ul>
-        <!-- 手机和平板的导航开关 -->
-        <!--<a class="blog-navicon" href="javascript:;">
-            <i class="fa fa-navicon"></i>
-        </a>-->
+        </ul>-->
     </div>
-</nav>
-<div class="blog-container">
-    <div class="blog-main">
-        <div class="blog-main-left">
-            <div class="article shadow">
-                <div class="artilce-left" style="width: 25%;float: left">
-                    猿强，则国强。国强，则猿更强！
+</div>
+
+<div class="layui-container container">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md8">
+            <div class="carousel">
+                <div class="layui-carousel" id="images-carousel">
+                    <div carousel-item>
+                        <div>
+                            <a href="article_details.html"><img lay-src="../../images/2.jpeg" width="100%" height="280px;" /></a>
+                        </div>
+                        <div>
+                            <img lay-src="../../images/2.jpeg" width="100%" height="280px;" />
+                        </div>
+                        <div>
+                            <img lay-src="../../images/3.jpg" width="100%" height="280px;" />
+                        </div>
+                        <div>
+                            <img lay-src="../../images/4.jpg" width="100%" height="280px;" />
+                        </div>
+                        <div>
+                            <img lay-src="../../images/5.jpg" width="100%" height="280px;" />
+                        </div>
+                    </div>
                 </div>
-                <div class="artilce-right" style="width: 70%;float: right">
-                    猿强，则国强。国强，则猿更强！——孟子（好囖。。其实这特喵的是我说的）
+            </div>
+            <div class="article-main">
+                <h2>
+                    文章推荐
+                </h2>
+
+                <div class="article-list">
+                    <figure><img lay-src="../static/images/01.jpg"></figure>
+                    <ul>
+                        <h3>
+                            <a href="article_details.html">住在手机里的朋友</a>
+                        </h3>
+                        <p>现在跨界联姻，时尚、汽车以及运动品牌联合手机制造商联合发布手机产品在行业里已经不再新鲜，上周我们给大家报道过著名手表制造商瑞士泰格·豪雅（Tag Heuer） 联合法国的手机制造商Modelabs发布的一款奢华手机的部分谍照，而近日该手机终于被正式发布了...</p>
+                        <p class="autor">
+                            <span class="lm f_l"><a href="#">个人博客</a></span>
+                            <span class="dtime f_l">2014-02-19</span>
+                            <span class="viewnum f_r">浏览（<a href="#">459</a>）</span>
+                            <span class="pingl f_r">评论（<a href="#">30</a>）</span></p>
+                    </ul>
                 </div>
+
+                <div class="article-list">
+                    <figure><img lay-src="../static/images/01.jpg"></figure>
+                    <ul>
+                        <h3>
+                            <a href="article_details.html">住在手机里的朋友</a>
+                        </h3>
+                        <p>通信时代，无论是初次相见还是老友重逢，交换联系快餐式的友谊 ...</p>
+                        <p class="autor">
+                            <span class="lm f_l"><a href="#">个人博客</a></span>
+                            <span class="dtime f_l">2014-02-19</span>
+                            <span class="viewnum f_r">浏览（<a href="#">459</a>）</span>
+                            <span class="pingl f_r">评论（<a href="#">30</a>）</span></p>
+                    </ul>
+                </div>
+                <div class="article-list">
+                    <figure><img lay-src="../static/images/02.jpg"></figure>
+                    <ul>
+                        <h3>
+                            <a href="article_details.html">住在手机里的朋友</a>
+                        </h3>
+                        <p>通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是
+                            彼此交换名片，然后郑重或是出于礼貌用手机记的过客，
+                            通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后
+                            郑重或是出于礼貌用手机记的过客，这种快餐式的通信时代，无论是初次相见还是老友
+                            重逢，通信时代，无论是初次相见还是老友重种快餐式的这种快餐式的友谊 ...</p>
+                        <p class="autor">
+                            <span class="lm f_l"><a href="#">个人博客</a></span>
+                            <span class="dtime f_l">2014-02-19</span>
+                            <span class="viewnum f_r">浏览（<a href="#">459</a>）</span>
+                            <span class="pingl f_r">评论（<a href="#">30</a>）</span></p>
+                    </ul>
+                </div>
+                <div class="article-list">
+                    <figure><img lay-src="../static/images/02.jpg"></figure>
+                    <ul>
+                        <h3>
+                            <a href="article_details.html">住在手机里的朋友</a>
+                        </h3>
+                        <p>通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是
+                            彼此交换名片，然后郑重或是出于礼貌用手机记的过客，
+                            通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后
+                            郑重或是出于礼貌用手机记的过客，这种快餐式的通信时代，无论是初次相见还是老友
+                            重逢，通信时代，无论是初次相见还是老友重种快餐式的这种快餐式的友谊 ...</p>
+                        <p class="autor">
+                            <span class="lm f_l"><a href="#">个人博客</a></span>
+                            <span class="dtime f_l">2014-02-19</span>
+                            <span class="viewnum f_r">浏览（<a href="#">459</a>）</span>
+                            <span class="pingl f_r">评论（<a href="#">30</a>）</span></p>
+                    </ul>
+                </div>
+                <div class="article-list">
+                    <figure><img lay-src="../static/images/02.jpg"></figure>
+                    <ul>
+                        <h3>
+                            <a href="article_details.html">住在手机里的朋友</a>
+                        </h3>
+                        <p>通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是
+                            彼此交换名片，然后郑重或是出于礼貌用手机记的过客，
+                            通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后
+                            郑重或是出于礼貌用手机记的过客，这种快餐式的通信时代，无论是初次相见还是老友
+                            重逢，通信时代，无论是初次相见还是老友重种快餐式的这种快餐式的友谊 ...</p>
+                        <p class="autor">
+                            <span class="lm f_l"><a href="#">个人博客</a></span>
+                            <span class="dtime f_l">2014-02-19</span>
+                            <span class="viewnum f_r">浏览（<a href="#">459</a>）</span>
+                            <span class="pingl f_r">评论（<a href="#">30</a>）</span></p>
+                    </ul>
+                </div>
+
+                <div class="article-list">
+                    <figure><img lay-src="../static/images/05.jpg"></figure>
+                    <ul>
+                        <h3>
+                            <a href="article_details.html">住在手机里的朋友</a>
+                        </h3>
+                        <p>通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是
+                            彼此交换名片，然后郑重或是出于礼貌用手机记的过客，
+                            通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后
+                            郑重或是出于礼貌用手机记的过客，这种快餐式的通信时代，无论是初次相见还是老友
+                            重逢，通信时代，无论是初次相见还是老友重种快餐式的这种快餐式的友谊 ...</p>
+                        <p class="autor">
+                            <span class="lm f_l"><a href="#">个人博客</a></span>
+                            <span class="dtime f_l">2014-02-19</span>
+                            <span class="viewnum f_r">浏览（<a href="#">459</a>）</span>
+                            <span class="pingl f_r">评论（<a href="#">30</a>）</span></p>
+                    </ul>
+                </div>
+            </div>
+            <!--分页-->
+            <div id="page"></div>
+        </div>
+        <div class="layui-col-md4">
+            <form class="layui-form" method="post" action="message.html">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline" style="width:76%;">
+                        <input type="text" name="title" lay-verify="required" placeholder="请输入关键字" class="layui-input">
+                    </div>
+                    <button class="layui-btn" lay-filter="*" lay-submit>搜索</button>
+                </div>
+            </form>
+            <div class="ad"> <img lay-src="../static/images/ad.jpg"> </div>
+            <div class="ms-top">
+                <ul class="hd" id="tab">
+                    <li class="cur"><a>点击排行</a></li>
+                    <li><a>最新文章</a></li>
+                    <li><a>站长推荐</a></li>
+                    <li><a>最新评论</a></li>
+                </ul>
+            </div>
+            <div class="ms-main" id="ms-main">
+                <div style="display: block;" class="bd bd-news" >
+                    <ul>
+                        <li><a href="#" target="_blank">住在手机里的朋友</a></li>
+                        <li><a href="#" target="_blank">教你怎样用欠费手机拨打电话</a></li>
+                        <li><a href="#" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
+                        <li><a href="#" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
+                        <li><a href="#" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
+                        <li><a href="#" target="_blank">你面对的是生活而不是手机</a></li>
+                    </ul>
+                </div>
+                <div  class="bd bd-news">
+                    <ul>
+                        <li><a href="#" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
+                        <li><a href="#" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
+                        <li><a href="#" target="_blank">住在手机里的朋友</a></li>
+                        <li><a href="#" target="_blank">教你怎样用欠费手机拨打电话</a></li>
+                        <li><a href="#" target="_blank">你面对的是生活而不是手机</a></li>
+                        <li><a href="#" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
+                    </ul>
+                </div>
+                <div class="bd bd-news">
+                    <ul>
+
+                        <li><a href="#" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
+                        <li><a href="#" target="_blank">你面对的是生活而不是手机</a></li>
+                        <li><a href="#" target="_blank">住在手机里的朋友</a></li>
+                        <li><a href="#" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
+                        <li><a href="#" target="_blank">教你怎样用欠费手机拨打电话</a></li>
+                        <li><a href="#" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
+                    </ul>
+                </div>
+                <div  class="bd bd-news">
+                    <ul>
+                        <li><a href="#" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
+                        <li><a href="#" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
+                        <li><a href="#" target="_blank">住在手机里的朋友</a></li>
+                        <li><a href="#" target="_blank">教你怎样用欠费手机拨打电话</a></li>
+                        <li><a href="#" target="_blank">你面对的是生活而不是手机</a></li>
+                        <li><a href="#" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cloud">
+                <h3>标签云</h3>
+                <ul>
+                    <li><a href="#">个人博客</a></li>
+                    <li><a href="#">web开发</a></li>
+                    <li><a href="#">前端设计</a></li>
+                    <li><a href="#">Html</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">Html5+css3</a></li>
+                    <li><a href="#">百度</a></li>
+                    <li><a href="#">Javasript</a></li>
+                    <li><a href="#">web开发</a></li>
+                    <li><a href="#">前端设计</a></li>
+                    <li><a href="#">Html</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">Html5+css3</a></li>
+                    <li><a href="#">百度</a></li>
+                </ul>
+            </div>
+            <div class="tuwen">
+                <h3>图文推荐</h3>
+                <ul>
+                    <li><a href="#"><img lay-src="../static/images/01.jpg"><b>住在手机里的朋友</b></a>
+                        <p><span class="tulanmu"><a href="#">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+                    </li>
+                    <li><a href="#"><img lay-src="../static/images/02.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
+                        <p><span class="tulanmu"><a href="#">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+                    </li>
+                    <li><a href="#"><img lay-src="../static/images/03.jpg"><b>手机的16个惊人小秘密，据说...</b></a>
+                        <p><span class="tulanmu"><a href="#">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+                    </li>
+                    <li><a href="#"><img lay-src="../static/images/06.jpg"><b>住在手机里的朋友</b></a>
+                        <p><span class="tulanmu"><a href="#">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+                    </li>
+                    <li><a href="#"><img lay-src="../static/images/04.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
+                        <p><span class="tulanmu"><a href="#">手机配件</a></span><span class="tutime">2015-02-15</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="ad"> <img lay-src="../static/images/03.jpg"> </div>
+            <div class="links">
+                <h3><span>[<a href="#">申请友情链接</a>]</span>友情链接</h3>
+                <ul>
+                    <li><a href="#">web开发</a></li>
+                    <li><a href="#">前端设计</a></li>
+                    <li><a href="#">Html</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">Html5+css3</a></li>
+                    <li><a href="#">百度</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -58,32 +295,12 @@
 </body>
 </html>
 <style>
-    .blog-main {
-        margin-top: 15px;
-        width: 100%;
-        position: relative;
-        min-height: 100vh;
+    .layui-logo{
+        margin-left: 5%;
+        margin-top: 5px;
     }
-    .blog-container{
-        margin: 0 auto;
-        position: relative;
-        width: 1170px;
-    }
-    .blog-main .blog-main-left{
-        width: 60%;
-        float: left;
-    }
-    .article {
-        padding: 15px;
-        margin-bottom: 10px;
-        background: #fff;
-        border-left: 5px solid #fff;
-        -moz-transition: all 0.3s linear;
-        -o-transition: all 0.3s linear;
-        -webkit-transition: all 0.3s linear;
-        transition: all 0.3s linear;
-    }
-    .shadow {
-        box-shadow: 0 2px 10px 0 rgba(2, 0, 0, 0.1);
+    .logo1{
+        position: absolute;
+        font-size: 20px;
     }
 </style>
