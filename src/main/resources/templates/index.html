@@ -45,10 +45,26 @@
             <img src="/images/haha.jpg" style="width: 150px;height: 150px">
         </div>
         <div class="left-text">
+            <li>    Roger   </li>
             <li>Roger</li>
         </div>
     </div>
-
+    <div class="main-right">
+        <div class="main-blog">
+            <a href="#">
+                <img src="/images/haha.jpg">
+            </a>
+            <div class="cont">
+                <p>
+                    <em class="recommend">推荐</em>
+                    <a href="/posts/5a713c20230384344845388d">算法-排序</a></p>
+                <div>
+                    排序问题，排序问题一直是开发中不可避免的问题，选择合适的方法进行对目标数据的排序
+                    ---编辑中
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--<div class="layui-container container">
     <div class="layui-row layui-col-space20">
@@ -250,7 +266,6 @@
         width: 260px;
         position: absolute;
         height: 100%;
-        background-color: #f9f7f7;
     }
     .left-images {
         width: 150px;
@@ -265,6 +280,41 @@
         position: absolute;
         top: 270px;
         left: 100px;
+    }
+    .main-right{
+        position: absolute;
+        top: 100px;
+        left: 300px;
+    }
+    .main-blog{
+        overflow: hidden;
+        background: #ffffff;
+        padding-top: 21px;
+        padding-bottom: 21px;
+        border-radius: 10px;
+        margin: 21px 7px;
+        transition: all 0.28s;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+    }
+    .main-blog .cont{
+        float: right;
+        width: 63%;
+        margin-left: 6%;
+    }
+    em.recommend {
+        font-size: 14px;
+        margin-right: 5px;
+        color: rgb(180, 0, 0);
+    }
+    .cont > div {
+        height: 76px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-indent: 2em;
+        margin-top: 8px;
+        color: #999;
     }
 </style>
 <script type="text/javascript">
